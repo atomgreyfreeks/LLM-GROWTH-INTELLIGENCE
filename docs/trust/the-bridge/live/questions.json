@@ -1,0 +1,34 @@
+[
+  {
+    "q": "Q1",
+    "text": "Which sensor report supports the statement that hold-down bolts in the north anchorage have lost preload since commissioning?"
+  },
+  {
+    "q": "Q2",
+    "text": "Which sensor report supports the statement that a stay cable is reading well below its commissioning tension?"
+  },
+  {
+    "q": "Q3",
+    "text": "Which sensor report supports the statement that a dehumidification fan failure has raised humidity in an anchorage chamber?"
+  },
+  {
+    "q": "Q4",
+    "text": "Which sensor report supports the statement that wire-break acoustic events have risen from zero this quarter?"
+  },
+  {
+    "q": "Q5",
+    "text": "Which sensor report supports the statement that midspan deflection under a calibration load exceeded the design envelope?"
+  },
+  {
+    "q": "Q6",
+    "text": "Which sensor report supports the statement that a pier bearing spiked well above ambient temperature under load?"
+  },
+  {
+    "q": "Q7",
+    "text": "Which sensor report supports the statement that blocked scuppers are ponding water on a span?"
+  },
+  {
+    "q": "Q8",
+    "text": "Which sensor report supports the statement that a parapet anchor pull-test met its specification?"
+  }
+]

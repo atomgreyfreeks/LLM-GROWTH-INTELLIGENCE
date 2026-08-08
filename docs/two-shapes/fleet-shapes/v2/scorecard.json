@@ -1,0 +1,457 @@
+{
+  "vascular": {
+    "rows": [
+      {
+        "round": 1,
+        "hits": 2,
+        "aid": [
+          "Umberfield",
+          "Oxbow",
+          "Fernway",
+          "Larkmoor"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Cinder Row",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Thistledown",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 3
+      },
+      {
+        "round": 2,
+        "hits": 2,
+        "aid": [
+          "Ashfield",
+          "Gorse Hill",
+          "Harrow Bend",
+          "Pinemarch"
+        ],
+        "read": [
+          "Ashfield",
+          "Dunmore",
+          "Eastholt",
+          "Gorse Hill",
+          "Ivy Hollow",
+          "Kiln Flats",
+          "Millstead",
+          "Pinemarch",
+          "Rushwater",
+          "Saltern",
+          "Wrenfall",
+          "Yarrow Point"
+        ],
+        "flags": [
+          "Harrow Bend",
+          "Thistledown"
+        ],
+        "watch_n": 6
+      },
+      {
+        "round": 3,
+        "hits": 2,
+        "aid": [
+          "Harrow Bend",
+          "Thistledown",
+          "Oxbow",
+          "Larkmoor"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Cinder Row",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Thistledown",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 5
+      },
+      {
+        "round": 4,
+        "hits": 2,
+        "aid": [
+          "Ashfield",
+          "Gorse Hill",
+          "Pinemarch",
+          "Millstead"
+        ],
+        "read": [
+          "Ashfield",
+          "Dunmore",
+          "Eastholt",
+          "Gorse Hill",
+          "Millstead",
+          "Pinemarch",
+          "Rushwater",
+          "Saltern"
+        ],
+        "flags": [],
+        "watch_n": 6
+      },
+      {
+        "round": 5,
+        "hits": 2,
+        "aid": [
+          "Oxbow",
+          "Harrow Bend",
+          "Thistledown",
+          "Larkmoor"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Cinder Row",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Thistledown",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 5
+      }
+    ],
+    "emergencyFirstRead": {
+      "Harrow Bend": 1,
+      "Thistledown": 1
+    },
+    "emergencyFirstAid": {
+      "Harrow Bend": 2,
+      "Thistledown": 3
+    },
+    "incumbentOverstayRounds": [],
+    "distinctR3to5": 20,
+    "neverReadR3to5": [
+      "Ivy Hollow",
+      "Kiln Flats",
+      "Wrenfall",
+      "Yarrow Point"
+    ]
+  },
+  "physarum": {
+    "rows": [
+      {
+        "round": 1,
+        "hits": 2,
+        "aid": [
+          "Umberfield",
+          "Oxbow",
+          "Fernway",
+          "Larkmoor"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Cinder Row",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Thistledown",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 2
+      },
+      {
+        "round": 2,
+        "hits": 2,
+        "aid": [
+          "Umberfield",
+          "Millstead",
+          "Fernway",
+          "Oxbow"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Kiln Flats",
+          "Larkmoor",
+          "Millstead",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [
+          "Harrow Bend",
+          "Thistledown"
+        ],
+        "watch_n": 4
+      },
+      {
+        "round": 3,
+        "hits": 1,
+        "aid": [
+          "Harrow Bend",
+          "Larkmoor",
+          "Oxbow",
+          "Fernway"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Kiln Flats",
+          "Larkmoor",
+          "Millstead",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 4
+      },
+      {
+        "round": 4,
+        "hits": 1,
+        "aid": [
+          "Harrow Bend",
+          "Millstead",
+          "Oxbow",
+          "Larkmoor"
+        ],
+        "read": [
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Millstead",
+          "Oxbow",
+          "Quarry Edge",
+          "Umberfield"
+        ],
+        "flags": [],
+        "watch_n": 4
+      },
+      {
+        "round": 5,
+        "hits": 2,
+        "aid": [
+          "Oxbow",
+          "Harrow Bend",
+          "Cinder Row",
+          "Thistledown"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Kiln Flats",
+          "Larkmoor",
+          "Millstead",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 4
+      }
+    ],
+    "emergencyFirstRead": {
+      "Harrow Bend": 1,
+      "Thistledown": 1
+    },
+    "emergencyFirstAid": {
+      "Harrow Bend": 3,
+      "Thistledown": 5
+    },
+    "incumbentOverstayRounds": [],
+    "distinctR3to5": 12,
+    "neverReadR3to5": [
+      "Ashfield",
+      "Cinder Row",
+      "Dunmore",
+      "Eastholt",
+      "Gorse Hill",
+      "Ivy Hollow",
+      "Pinemarch",
+      "Rushwater",
+      "Saltern",
+      "Thistledown",
+      "Wrenfall",
+      "Yarrow Point"
+    ]
+  },
+  "mycelium": {
+    "rows": [
+      {
+        "round": 1,
+        "hits": 2,
+        "aid": [
+          "Umberfield",
+          "Oxbow",
+          "Fernway",
+          "Larkmoor"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Cinder Row",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Thistledown",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 3
+      },
+      {
+        "round": 2,
+        "hits": 2,
+        "aid": [
+          "Ashfield",
+          "Gorse Hill",
+          "Harrow Bend",
+          "Thistledown"
+        ],
+        "read": [
+          "Ashfield",
+          "Dunmore",
+          "Eastholt",
+          "Gorse Hill",
+          "Ivy Hollow",
+          "Kiln Flats",
+          "Millstead",
+          "Pinemarch",
+          "Rushwater",
+          "Saltern",
+          "Wrenfall",
+          "Yarrow Point"
+        ],
+        "flags": [
+          "Harrow Bend",
+          "Thistledown"
+        ],
+        "watch_n": 4
+      },
+      {
+        "round": 3,
+        "hits": 2,
+        "aid": [
+          "Harrow Bend",
+          "Thistledown",
+          "Larkmoor",
+          "Oxbow"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Cinder Row",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Thistledown",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 6
+      },
+      {
+        "round": 4,
+        "hits": 2,
+        "aid": [
+          "Ashfield",
+          "Gorse Hill",
+          "Pinemarch",
+          "Millstead"
+        ],
+        "read": [
+          "Ashfield",
+          "Dunmore",
+          "Eastholt",
+          "Gorse Hill",
+          "Millstead",
+          "Pinemarch",
+          "Rushwater",
+          "Saltern"
+        ],
+        "flags": [],
+        "watch_n": 6
+      },
+      {
+        "round": 5,
+        "hits": 2,
+        "aid": [
+          "Harrow Bend",
+          "Oxbow",
+          "Thistledown",
+          "Larkmoor"
+        ],
+        "read": [
+          "Barrow Cross",
+          "Cinder Row",
+          "Fernway",
+          "Harrow Bend",
+          "Junction Vale",
+          "Larkmoor",
+          "Northgate",
+          "Oxbow",
+          "Quarry Edge",
+          "Thistledown",
+          "Umberfield",
+          "Vetch Green"
+        ],
+        "flags": [],
+        "watch_n": 4
+      }
+    ],
+    "emergencyFirstRead": {
+      "Harrow Bend": 1,
+      "Thistledown": 1
+    },
+    "emergencyFirstAid": {
+      "Harrow Bend": 2,
+      "Thistledown": 2
+    },
+    "incumbentOverstayRounds": [],
+    "distinctR3to5": 20,
+    "neverReadR3to5": [
+      "Ivy Hollow",
+      "Kiln Flats",
+      "Wrenfall",
+      "Yarrow Point"
+    ]
+  }
+}

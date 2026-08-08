@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>THE STRATA — AURAWORLD</title>
+<style>
+  html,body{margin:0;height:100%;background:#03050a;overflow:hidden;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eef2f7}
+  /* width/height REQUIRED: renderer.setSize(w,h,false) leaves canvas.style unset, and a
+     replaced element with width:auto lays out at its BACKING-STORE size in CSS pixels
+     (3024x1720 at dpr 2) anchored top-left, which threw the whole scene off-frame. */
+  #gl{position:fixed;inset:0;width:100%;height:100%;display:block}
+  .ui{position:fixed;pointer-events:none;user-select:none}
+  h1{font-size:27px;font-weight:700;letter-spacing:-.02em;margin:0}
+  .sub{font-size:13.5px;line-height:1.55;opacity:.6;margin-top:12px;max-width:400px}
+  .k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.42}
+  .lay{position:fixed;pointer-events:none;white-space:nowrap;transform:translate(0,-50%)}
+  .lay .n{font-size:13px;font-weight:700}
+  .lay .d{font-size:11px;opacity:.5;margin-top:2px}
+  .lay .c{font-size:11px;opacity:.75;margin-top:3px;font-variant-numeric:tabular-nums}
+  #lever{pointer-events:auto;width:290px}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;
+    background:#1b242e;outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;
+    border-radius:50%;background:#ffb43d;cursor:pointer}
+  .big{font-size:19px;line-height:1.45}
+  #panel{position:fixed;left:42px;bottom:42px;width:250px;padding:16px 18px;
+    background:rgba(4,7,12,.90);border:1px solid rgba(255,255,255,.13);
+    pointer-events:auto;display:none}
+  #panel.on{display:block}
+  #panel label{display:block;margin-top:13px;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;opacity:.55}
+  #panel input[type=range]{margin-top:6px}
+  #panel .v{float:right;opacity:.9;font-variant-numeric:tabular-nums}
+  #hint{position:fixed;left:42px;bottom:16px;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;opacity:.26}
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+
+<div class="ui" style="left:42px;top:36px">
+  <h1>The Strata</h1>
+  <div class="sub">One territory, five times. Each sheet above the ground is the same place
+    after another layer of the machine has looked at it and thrown most of it away.</div>
+  <div class="sub" style="margin-top:10px">Drag to orbit, scroll to zoom. The bright threads
+    are the information that survived the climb.</div>
+</div>
+
+<div class="ui" style="right:42px;top:36px;text-align:right">
+  <div class="k">how much detail survives each layer</div>
+  <div id="lever" style="margin-top:10px"><input id="loss" type="range" min="0" max="1" step="0.01" value="0.32"/></div>
+  <div style="display:flex;justify-content:space-between;font-size:11px;margin-top:7px;width:290px">
+    <span>almost nothing</span><span>almost everything</span>
+  </div>
+  <div class="sub" id="exp" style="margin-left:auto;margin-top:15px;font-size:12.5px">—</div>
+</div>
+
+<div class="ui" style="left:0;right:0;bottom:30px;text-align:center">
+  <div class="big"><b id="lost" style="color:#ff6a3d">0</b>
+    <span style="opacity:.75"> people are on the ground and in nobody's briefing.</span></div>
+  <div class="k" style="margin-top:11px" id="stat">—</div>
+</div>
+
+<div id="panel">
+  <div class="k" style="opacity:.6">CONTROLS — PRESS L</div>
+  <label>detail survives <span class="v" id="vKeep">0.32</span>
+    <input id="pKeep" type="range" min="0" max="1" step="0.01" value="0.32"></label>
+  <label>turntable <span class="v" id="vSpin">0.000</span>
+    <input id="pSpin" type="range" min="0" max="0.4" step="0.005" value="0"></label>
+  <label>exposure <span class="v" id="vGain">1.02</span>
+    <input id="pGain" type="range" min="0.3" max="2.2" step="0.02" value="1.02"></label>
+  <label>layer spacing <span class="v" id="vGap">1.18</span>
+    <input id="pGap" type="range" min="0.5" max="2.6" step="0.02" value="1.18"></label>
+  <button id="pReset" style="margin-top:14px;width:100%;background:transparent;
+    border:1px solid rgba(255,255,255,.16);color:#eef2f7;padding:7px;cursor:pointer;
+    font-family:inherit;font-size:10px;letter-spacing:.16em;text-transform:uppercase">
+    recentre view</button>
+</div>
+<div id="hint">L — CONTROLS</div>
+<script type="module" src="/src/strata/main.ts"></script>
+  <script src="/nav.js" defer></script>
+</body>
+</html>

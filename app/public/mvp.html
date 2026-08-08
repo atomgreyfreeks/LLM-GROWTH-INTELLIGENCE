@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>THE SAME GROUND — AURAWORLD</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;color:#e9edf2;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;overflow:hidden;
+    -webkit-font-smoothing:antialiased}
+  body{display:flex;flex-direction:column}
+  .band{background:#000;flex:0 0 auto}
+  #head{padding:15px 26px 11px;border-bottom:1px solid rgba(255,255,255,.10);
+    display:flex;align-items:flex-start;gap:26px}
+  #stage{flex:1 1 auto;position:relative;background:#000;min-height:0}
+  #stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  #foot{padding:10px 26px 12px;border-top:1px solid rgba(255,255,255,.10)}
+  #foot .row{display:flex;align-items:flex-start;gap:26px;margin-top:7px}
+
+  h1{font-size:17px;font-weight:700;letter-spacing:.10em;margin:0;text-transform:uppercase}
+  .sub{font-size:12px;line-height:1.55;opacity:.52;margin-top:7px;max-width:640px}
+  .k{font-size:9.5px;letter-spacing:.19em;text-transform:uppercase;opacity:.42}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* the one knob — two arms, each a fresh run from the same seed, so the compare is
+     always at matched ticks rather than at two different amounts of elapsed growth */
+  .arms{display:flex;border:1px solid rgba(255,255,255,.20);margin-top:8px}
+  .arms a{display:block;padding:6px 15px;font-size:10.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:#e9edf2;text-decoration:none;opacity:.40}
+  .arms a+a{border-left:1px solid rgba(255,255,255,.20)}
+  .arms a.on{background:#e9edf2;color:#000;opacity:1;font-weight:700}
+
+  .big{font-size:19px;line-height:1.3;letter-spacing:-.005em}
+  .big b{font-weight:700;color:#ff4a1e}
+  .find{font-size:10.5px;line-height:1.62;opacity:.60;flex:1 1 0;min-width:0}
+  .find u{text-decoration:none;color:#ff4a1e;opacity:.95;font-weight:700;
+    letter-spacing:.10em;text-transform:uppercase;font-size:9.5px;display:block;margin-bottom:4px}
+  .find.b u{color:#e9edf2;opacity:.55}
+  .find code{font-family:inherit;opacity:.95;border-bottom:1px solid rgba(255,255,255,.22)}
+  .find s{text-decoration:none;color:#e9edf2;opacity:.95;font-weight:700}
+
+  table{border-collapse:collapse;font-size:10.5px;font-variant-numeric:tabular-nums}
+  td,th{padding:2px 11px 2px 0;text-align:right;font-weight:400;white-space:nowrap}
+  th{font-size:9px;letter-spacing:.13em;text-transform:uppercase;opacity:.38;
+    padding-bottom:5px;font-weight:400}
+  td:first-child,th:first-child{text-align:left;padding-right:16px}
+  tr.rec td{opacity:.40}
+  tr.live td{opacity:.95}
+  tr.live td:first-child{color:#e9edf2}
+  .dot{display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:#e9edf2;margin-right:7px;vertical-align:1px}
+  .meter{margin-left:auto;text-align:right}
+</style>
+</head>
+<body>
+
+<div class="band" id="head">
+  <div style="flex:1 1 auto">
+    <h1>The Same Ground</h1>
+    <div class="sub">Eight fleets land on one map at the same moment. Same budget, same
+      sensors, same clock, same seed. The only thing that differs is the growth logic each
+      one inherited from its architecture — and the single knob below.</div>
+  </div>
+  <div style="flex:0 0 auto;text-align:right">
+    <div class="k">one knob · can the fleets sense each other</div>
+    <div class="arms" style="justify-content:flex-end" id="arms"></div>
+  </div>
+  <div class="meter" style="flex:0 0 auto">
+    <div class="k">frame</div>
+    <div class="num" style="font-size:15px;margin-top:6px" id="ms">—</div>
+    <div class="k" style="margin-top:5px" id="hold"></div>
+  </div>
+</div>
+
+<div id="stage"><canvas id="c"></canvas></div>
+
+<div class="band" id="foot">
+  <div class="big"><b id="dark">0</b>
+    <span style="opacity:.80" id="darkw"> people are on ground that no fleet has reached.</span></div>
+  <div class="row">
+    <div class="find">
+      <u>Finding · hypothesis refuted</u>
+      The prediction was that <s>blind</s> fleets would stack hardest — eight architectures all
+      finding the same cheap corridor. They stack <s>least</s>. At matched tick 905 the aware
+      arm holds 64,098 cells to blind's 55,180, stacks 65.7% of that ground against 47.4%, and
+      runs 2.67 fleets per held cell against 2.02. One sub-measure leans the predicted way and
+      only weakly: 12.8% of blind's deposited mass sits in its densest 5% of cells, against
+      10.1% aware. Neither is a corridor. The result stands as measured; nothing was tuned to
+      reach it.
+    </div>
+    <div class="find b">
+      <u>Why · measured, not assumed</u>
+      <code>need</code> is 1 on 4,324 of 66,067 passable cells, so blind the objective field is
+      flat on <s>93.5%</s> of the map and aware it is negative on <s>100%</s> of it. Six of the
+      eight logics steer by comparing that field at sampled points. Awareness does not teach
+      them to divide the ground — it deletes the last signal they had and they diffuse. The
+      vascular tree holds 397 cells at 1.76 people each blind, and 35,207 at 0.24 aware: 89×
+      the ground, a seventh of the yield. Coral and lichen never read the field at all and are
+      bit-identical in both arms, so the one knob reaches six fleets, not eight.
+    </div>
+    <div style="flex:0 0 auto">
+      <table>
+        <tr><th>at tick 905</th><th>unreached</th><th>held</th><th>stacked</th>
+            <th>depth</th><th>top 5%</th></tr>
+        <tr class="rec" id="rowBlind"><td>blind</td><td class="num">441</td><td class="num">55,180</td>
+            <td class="num">47.4%</td><td class="num">2.02</td><td class="num">12.8%</td></tr>
+        <tr class="rec" id="rowAware"><td>aware</td><td class="num">0</td><td class="num">64,098</td>
+            <td class="num">65.7%</td><td class="num">2.67</td><td class="num">10.1%</td></tr>
+        <tr class="live"><td><span class="dot"></span><span id="lnow">live</span></td>
+            <td class="num" id="mDark">—</td><td class="num" id="mHeld">—</td>
+            <td class="num" id="mStk">—</td><td class="num" id="mDep">—</td>
+            <td class="num" id="mTop">—</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+/* THE SAME GROUND — AURAWORLD MVP
+   Eight growth logics from the Growth Intelligence Field Guide, running as real models on one
+   shared synthetic map. Deterministic: seeded PRNG only, no Math.random, no Date.now in state.
+
+   Render follows the orrery technique — one per-pixel pass over the sensing grid builds the
+   body layer, the emissive layer AND every metric in the same sweep; the body is a lerp from
+   terrain toward the dominant fleet's colour, so it is bounded by construction and cannot
+   blow out. Motion is stroked separately at full canvas resolution and composited with
+   'screen', which asymptotes at white instead of clipping through it.
+
+   The eight are ALSO drawn as small multiples, one logic per panel on the same terrain,
+   because eight additive hues on one map is mud no matter how carefully it is composited. */
+
+const GW = 340, GH = 210, NC = GW*GH;
+const SEED = 0x5eed;
+
+function mk(s){let a=s>>>0;return function(){a=(a+0x6d2b79f5)>>>0;let t=Math.imul(a^(a>>>15),1|a);
+  t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296;};}
+function hash(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}return h>>>0;}
+const cl=(v,a,b)=>v<a?a:v>b?b:v;
+const wrap=(v,m)=>v<0?v+m:v>=m?v-m:v;
+
+/* ---------- the ground: synthetic terrain, synthetic settlements, no real place ---------- */
+const R0 = mk(SEED);
+const pass = new Float32Array(NC).fill(1);
+const people = new Float32Array(NC);
+const need = new Float32Array(NC);
+const elev = new Float32Array(NC);
+(function buildGround(){
+  const lobes=6, ax=[];
+  for(let l=0;l<lobes;l++) ax.push(0.7+R0()*2.2, R0()*6.283, 0.7+R0()*2.2, R0()*6.283);
+  for(let y=0;y<GH;y++)for(let x=0;x<GW;x++){
+    const u=x/GW, v=y/GH; let e=0;
+    for(let l=0;l<lobes;l++){const o=l*4;
+      e+=Math.sin(u*ax[o]*6.283+ax[o+1])*Math.cos(v*ax[o+2]*6.283+ax[o+3]);}
+    elev[y*GW+x]=e/lobes;
+  }
+  for(let y=0;y<GH;y++)for(let x=0;x<GW;x++){
+    const i=y*GW+x;
+    if(elev[i]>0.40) pass[i]=0;                                   // the ridge
+    const ch=Math.abs(y-GH*(0.66+0.05*Math.sin((x/GW)*5.1)));
+    if(ch<GH*0.028 && x>GW*0.16) pass[i]=0;                       // the flooded channel
+  }
+  for(let t=0;t<30;t++){
+    let cx=0,cy=0;
+    for(let k=0;k<60;k++){cx=(R0()*GW)|0;cy=(R0()*GH)|0;if(pass[cy*GW+cx]>0)break;}
+    const mass=60+R0()*300, rad=3+R0()*8, s2=2*(rad/2)*(rad/2);
+    for(let y=Math.max(0,cy-(rad|0));y<Math.min(GH,cy+(rad|0)+1);y++)
+    for(let x=Math.max(0,cx-(rad|0));x<Math.min(GW,cx+(rad|0)+1);x++){
+      const dx=x-cx,dy=y-cy,d2=dx*dx+dy*dy; if(d2>rad*rad)continue;
+      const i=y*GW+x; if(pass[i]<=0)continue;
+      people[i]+=mass*Math.exp(-d2/s2)/(rad*rad);
+    }
+  }
+  for(let i=0;i<NC;i++) need[i]= people[i]>0.03 ? 1 : 0;
+})();
+let SOULS=0; for(let i=0;i<NC;i++) SOULS+=people[i];
+let PASSN=0; for(let i=0;i<NC;i++) if(pass[i]>0) PASSN++;
+
+/* ---------- the eight logics ----------
+   Hues are spread around the wheel and kept clear of the burn colour (#ff4a1e), which is
+   reserved for people no fleet has reached. Colour is render-only; the kernel never reads it. */
+const LOGIC=[
+ {k:'slime',   nm:'slime mould',   c:[ 77,166,255], model:'Jones 2010 Physarum',
+  spec:'sensor 5.0 · turn 0.48'},
+ {k:'mycelium',nm:'mycelium',      c:[140,230, 46], model:'hyphal anastomosis',
+  spec:'branch .026 · fuse >0.5'},
+ {k:'root',    nm:'roots',         c:[255,138, 40], model:'gradient tropism',
+  spec:'5 sensors · reach 4.5'},
+ {k:'vascular',nm:'vascular tree', c:[255,222, 64], model:'space colonization',
+  spec:'7 samples · reach 3–14'},
+ {k:'coral',   nm:'coral',         c:[255, 92,158], model:'aggregation at the edge',
+  spec:'contact only · decay .0005'},
+ {k:'lichen',  nm:'lichen',        c:[150,124,255], model:'co-dependent pair',
+  spec:'algal .07 / fungal .24'},
+ {k:'swarm',   nm:'swarm',         c:[ 46,230,200], model:'chemotaxis + quorum',
+  spec:'stride 1.5 · decay .009'},
+ {k:'vine',    nm:'vine',          c:[227, 92,255], model:'support-seeking climb',
+  spec:'7 sensors · wall +0.55'},
+];
+const NF=LOGIC.length, CAP=460;   // every fleet gets exactly this many agents, always
+const LAND=[(GW*0.10)|0,(GH*0.30)|0];
+const BURN=[255,74,30], BONE=[233,237,242];
+
+const fleets=LOGIC.map((L,fi)=>{
+  const f={L,fi,mass:new Float32Array(NC),tx:new Float32Array(CAP),ty:new Float32Array(CAP),
+    th:new Float32Array(CAP),alive:new Uint8Array(CAP),n:0,rng:mk((SEED^hash(L.k))>>>0),
+    reached:0,spent:0,area:0};
+  const tips=CAP;
+  for(let i=0;i<tips;i++){f.tx[i]=LAND[0];f.ty[i]=LAND[1];f.th[i]=(i/tips)*6.283;f.alive[i]=1;}
+  f.n=tips; f.mass[LAND[1]*GW+LAND[0]]=1;
+  return f;
+});
+const MASS=fleets.map(f=>f.mass);
+const others=new Float32Array(NC);
+const claimed=new Float32Array(NC);     // union of every fleet's reach
+// ?sense=0|1 sets the arm at load, so the two arms can be compared at MATCHED ticks.
+// The arm is a page-level choice on purpose: dragging a lever mid-run compares two different
+// amounts of elapsed growth, which is not a comparison of anything.
+const QS=new URLSearchParams(location.search);
+let SENSE=parseFloat(QS.get('sense')||'0')||0;
+const TO=parseInt(QS.get('to')||'0',10)||0;    // fast-forward to a tick and hold there
+let HOLD=TO>0;
+
+/* THE ONE KNOB lives here and nowhere else: a fleet that can sense its neighbours discounts
+   ground already held. Blind, this term vanishes and every logic optimises as if alone.
+
+   THREE THINGS THIS ACTUALLY IS, all of which the measurement turned on. Written down because
+   the recorded result contradicts the hypothesis and the reason is in these three lines:
+
+   1. `rival` is LIVE mass and mass decays, so the term is transient repulsion from where a
+      neighbour is standing NOW — not a persistent claim on ground a neighbour already took.
+   2. `need` is 1 on 4,324 of 66,067 passable cells. With SENSE=0 this function therefore
+      returns exactly 0 on 93.5% of the map: the six logics that steer by comparing drawv at
+      sampled points are choosing between ties almost everywhere. With SENSE=1 it returns a
+      negative on 100% of the map by tick 905. The knob does not only add a social term, it
+      changes how much signal the objective field carries at all. That is a confound, and it
+      is the reason the aware arm covers more ground: its fleets are not coordinating, they
+      have lost their objective and are diffusing.
+   3. stepCoral and stepLichen never call drawv. The knob is inert for two of the eight —
+      their mass fields are bit-identical in both arms. One knob, six fleets. */
+function drawv(f,i){
+  if(pass[i]<=0) return -1;
+  const rival = others[i]-f.mass[i];
+  return need[i] - SENSE*1.45*Math.min(1,rival>0?rival:0);
+}
+
+/* Branching relocates an existing tip rather than adding one. An earlier cut let the branching
+   logics grow from 140 agents to 1400 while the slime mould stayed at 140 — so the comparison
+   was measuring how freely a logic was allowed to multiply, not how well it grew. */
+function branch(f,x,y,a){
+  const j=(f.rng()*f.n)|0;
+  f.tx[j]=x; f.ty[j]=y; f.th[j]=a; f.alive[j]=1;
+}
+
+/* --- A · slime mould: Jones 2010 — three sensors, rotate to strongest, deposit, repeat --- */
+const SO=5.0,SA=0.42,RA=0.48,SS=0.9;
+function sniff(f,x,y,a){
+  const sx=wrap(x+Math.cos(a)*SO,GW)|0, sy=wrap(y+Math.sin(a)*SO,GH)|0;
+  const i=sy*GW+sx; return f.mass[i]*1.9+drawv(f,i);
+}
+function stepSlime(f){
+  for(let k=0;k<f.n;k++){ if(!f.alive[k])continue;
+    const x=f.tx[k],y=f.ty[k],a=f.th[k];
+    const c=sniff(f,x,y,a), l=sniff(f,x,y,a-SA), r=sniff(f,x,y,a+SA);
+    let na=c>l&&c>r?a: l>r?a-RA: r>l?a+RA: a+(f.rng()-0.5)*RA*2;
+    const nx=wrap(x+Math.cos(na)*SS,GW), ny=wrap(y+Math.sin(na)*SS,GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=a+(f.rng()-0.5)*2.4;continue;}
+    f.tx[k]=nx;f.ty[k]=ny;f.th[k]=na;
+    f.mass[ni]=Math.min(1,f.mass[ni]+0.15); f.spent+=0.15;
+  }
+}
+/* --- B · mycelium: branch and FUSE. loops are the product; a mesh survives a cut --- */
+function stepMyc(f){
+  const n0=f.n;
+  for(let k=0;k<n0;k++){ if(!f.alive[k])continue;
+    const a=f.th[k]+(f.rng()-0.5)*0.36;
+    const nx=wrap(f.tx[k]+Math.cos(a)*0.95,GW), ny=wrap(f.ty[k]+Math.sin(a)*0.95,GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=a+1.9;continue;}
+    if(f.mass[ni]>0.5) f.mass[ni]=Math.min(1,f.mass[ni]+0.09);   // anastomosis
+    f.tx[k]=nx;f.ty[k]=ny;f.th[k]=a;
+    f.mass[ni]=Math.min(1,f.mass[ni]+0.12); f.spent+=0.12;
+    if(f.rng()<0.026+0.05*Math.max(0,drawv(f,ni)))
+      branch(f,nx,ny,a+(f.rng()<0.5?-1:1)*(0.5+f.rng()*0.6));
+  }
+}
+/* --- C · roots: strong tropism, weak branching -> commits to the first good patch --- */
+function stepRoot(f){
+  for(let k=0;k<f.n;k++){ if(!f.alive[k])continue;
+    let best=-1e9,ba=f.th[k];
+    for(let s=-2;s<=2;s++){
+      const a=f.th[k]+s*0.30;
+      const sx=wrap(f.tx[k]+Math.cos(a)*4.5,GW)|0, sy=wrap(f.ty[k]+Math.sin(a)*4.5,GH)|0;
+      const v=drawv(f,sy*GW+sx)-Math.abs(s)*0.07;
+      if(v>best){best=v;ba=a;}
+    }
+    const nx=wrap(f.tx[k]+Math.cos(ba)*0.9,GW), ny=wrap(f.ty[k]+Math.sin(ba)*0.9,GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=ba+2.4;continue;}
+    f.tx[k]=nx;f.ty[k]=ny;f.th[k]=ba;
+    f.mass[ni]=Math.min(1,f.mass[ni]+0.19); f.spent+=0.19;
+    if(f.rng()<0.006) branch(f,nx,ny,ba+(f.rng()-0.5)*1.7);
+  }
+}
+/* --- D · vascular: space colonization. tips steer to the mean of nearby unmet need,
+       branch hard near the source, and the far leaves thin out as the trunk thickens --- */
+function stepVasc(f){
+  const n0=f.n;
+  for(let k=0;k<n0;k++){ if(!f.alive[k])continue;
+    let vx=0,vy=0,cnt=0;
+    for(let s=0;s<7;s++){
+      const a=f.rng()*6.283, d=3+f.rng()*11;
+      const sx=wrap(f.tx[k]+Math.cos(a)*d,GW)|0, sy=wrap(f.ty[k]+Math.sin(a)*d,GH)|0;
+      const w=drawv(f,sy*GW+sx); if(w<=0)continue;
+      vx+=Math.cos(a)*w; vy+=Math.sin(a)*w; cnt++;
+    }
+    const ba=cnt? Math.atan2(vy,vx) : f.th[k]+(f.rng()-0.5)*0.5;
+    const nx=wrap(f.tx[k]+Math.cos(ba)*1.05,GW), ny=wrap(f.ty[k]+Math.sin(ba)*1.05,GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=ba+2.1;continue;}
+    f.tx[k]=nx;f.ty[k]=ny;f.th[k]=ba;
+    f.mass[ni]=Math.min(1,f.mass[ni]+0.26); f.spent+=0.26;   // thick trunk, expensive
+    if(f.rng()<0.020) branch(f,nx,ny,ba+(f.rng()<0.5?-0.75:0.75));
+  }
+}
+/* --- E · coral: aggregation only at the existing edge. permanent, slow, holds ground --- */
+function stepCoral(f){
+  for(let k=0;k<f.n;k++){ if(!f.alive[k])continue;
+    const a=f.th[k]+(f.rng()-0.5)*1.5;
+    const nx=wrap(f.tx[k]+Math.cos(a)*1.1,GW), ny=wrap(f.ty[k]+Math.sin(a)*1.1,GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=a+2.6;continue;}
+    // sticks only where it already touches itself — accretion at the rim
+    let touch=0;
+    const gx=nx|0, gy=ny|0;
+    for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+      const j=wrap(gy+dy,GH)*GW+wrap(gx+dx,GW); if(f.mass[j]>0.3)touch++;
+    }
+    if(touch>0){ f.mass[ni]=Math.min(1,f.mass[ni]+0.32); f.spent+=0.32;
+      f.tx[k]=nx;f.ty[k]=ny;f.th[k]=a+(f.rng()-0.5)*2.0;
+    } else { f.tx[k]=nx;f.ty[k]=ny;f.th[k]=a; }
+  }
+}
+/* --- F · lichen: two halves. the advancing half may only stand where the anchoring half
+       has already deposited, and vice versa. neither is viable alone. --- */
+function stepLichen(f){
+  for(let k=0;k<f.n;k++){ if(!f.alive[k])continue;
+    const algal = (k&1)===0;
+    const a=f.th[k]+(f.rng()-0.5)*(algal?0.7:0.3);
+    const nx=wrap(f.tx[k]+Math.cos(a)*(algal?1.15:0.7),GW);
+    const ny=wrap(f.ty[k]+Math.sin(a)*(algal?1.15:0.7),GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=a+2.2;continue;}
+    const support=f.mass[ni];
+    if(algal){ // explores freely, deposits little
+      f.tx[k]=nx;f.ty[k]=ny;f.th[k]=a;
+      f.mass[ni]=Math.min(1,f.mass[ni]+0.07); f.spent+=0.07;
+    } else if(support>0.05){ // consolidates only what the other half found
+      f.tx[k]=nx;f.ty[k]=ny;f.th[k]=a;
+      f.mass[ni]=Math.min(1,f.mass[ni]+0.24); f.spent+=0.24;
+    } else { f.th[k]=a+(f.rng()-0.5)*2.4; }
+  }
+}
+/* --- G · swarm: chemotaxis up the need gradient with a quorum gate. covers ground fast,
+       deposits almost nothing, so what it takes it does not keep. --- */
+function stepSwarm(f){
+  for(let k=0;k<f.n;k++){ if(!f.alive[k])continue;
+    let best=-1e9,ba=f.th[k];
+    for(let s=-1;s<=1;s++){
+      const a=f.th[k]+s*0.55;
+      const sx=wrap(f.tx[k]+Math.cos(a)*3.0,GW)|0, sy=wrap(f.ty[k]+Math.sin(a)*3.0,GH)|0;
+      const i=sy*GW+sx; const v=drawv(f,i)+f.mass[i]*0.6;   // quorum: follow the crowd a little
+      if(v>best){best=v;ba=a;}
+    }
+    ba+=(f.rng()-0.5)*0.5;
+    const nx=wrap(f.tx[k]+Math.cos(ba)*1.5,GW), ny=wrap(f.ty[k]+Math.sin(ba)*1.5,GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=ba+2.3;continue;}
+    f.tx[k]=nx;f.ty[k]=ny;f.th[k]=ba;
+    f.mass[ni]=Math.min(1,f.mass[ni]+0.10); f.spent+=0.10;
+  }
+}
+/* --- H · vine: may only advance along the flank of impassable structure. opportunistic,
+       and completely stuck where there is nothing to hold. --- */
+function stepVine(f){
+  for(let k=0;k<f.n;k++){ if(!f.alive[k])continue;
+    let best=-1e9,ba=f.th[k];
+    for(let s=-3;s<=3;s++){
+      const a=f.th[k]+s*0.42;
+      const sx=wrap(f.tx[k]+Math.cos(a)*2.6,GW)|0, sy=wrap(f.ty[k]+Math.sin(a)*2.6,GH)|0;
+      const i=sy*GW+sx; if(pass[i]<=0)continue;
+      let sup=0;
+      for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+        if(pass[wrap(sy+dy,GH)*GW+wrap(sx+dx,GW)]<=0) sup++;
+      }
+      const v=drawv(f,i)+sup*0.55;                 // wants a wall to climb
+      if(v>best){best=v;ba=a;}
+    }
+    const nx=wrap(f.tx[k]+Math.cos(ba)*1.0,GW), ny=wrap(f.ty[k]+Math.sin(ba)*1.0,GH);
+    const ni=(ny|0)*GW+(nx|0);
+    if(pass[ni]<=0){f.th[k]=ba+2.5;continue;}
+    f.tx[k]=nx;f.ty[k]=ny;f.th[k]=ba;
+    f.mass[ni]=Math.min(1,f.mass[ni]+0.17); f.spent+=0.17;
+  }
+}
+const STEPPERS=[stepSlime,stepMyc,stepRoot,stepVasc,stepCoral,stepLichen,stepSwarm,stepVine];
+
+/* ================================ RENDER ================================
+   Layers, in order, all bounded:
+     1  body   — grid-res per-pixel lerp from terrain toward the dominant fleet's colour.
+                 Because it is a lerp it is mathematically incapable of exceeding the brighter
+                 of {terrain, fleet colour}. Contested ground (a close second fleet) is pulled
+                 toward bone, so stacking reads as over-exposure without actually clipping.
+     2  trail  — the eight fleets' motion, stroked at FULL canvas resolution, composited with
+                 'screen'. Screen asymptotes at white; 'lighter' walks straight through it.
+     3  bloom  — from a THRESHOLDED emissive built in the same per-pixel pass. The previous
+                 cut bloomed the whole trail buffer twice, which was not a bloom, it was a
+                 uniform grey lift that took the black ground away.
+     4  people — one dot per inhabited cell. Bone where a fleet has arrived, burn where none has.
+   The eight small multiples share the body maths with one fleet's mass each, so a viewer can
+   see eight morphologies instead of one composite. */
+const cv=document.getElementById('c'), ctx=cv.getContext('2d',{alpha:false});
+const stage=document.getElementById('stage');
+const ASP=GW/GH;
+
+// static terrain colour, resolved once
+const TR=new Uint8Array(NC), TG=new Uint8Array(NC), TB=new Uint8Array(NC);
+for(let i=0;i<NC;i++){
+  if(pass[i]<=0){ const t=cl((elev[i]-0.30)*1.7,0,1);
+    TR[i]=10+t*17; TG[i]=14+t*21; TB[i]=20+t*28; }
+  else { const t=cl(elev[i]*0.5+0.5,0,1);
+    TR[i]=4+t*6; TG[i]=6+t*8; TB[i]=9+t*12; }
+}
+
+const bodyCv=document.createElement('canvas'); bodyCv.width=GW; bodyCv.height=GH;
+const bodyCx=bodyCv.getContext('2d'); const bodyIm=bodyCx.createImageData(GW,GH);
+const emitCv=document.createElement('canvas'); emitCv.width=GW; emitCv.height=GH;
+const emitCx=emitCv.getContext('2d'); const emitIm=emitCx.createImageData(GW,GH);
+const panCv=[], panCx=[], panIm=[];
+for(let f=0;f<NF;f++){
+  const c=document.createElement('canvas'); c.width=GW; c.height=GH;
+  const x=c.getContext('2d'); panCv.push(c); panCx.push(x); panIm.push(x.createImageData(GW,GH));
+}
+const trail=document.createElement('canvas'), tc=trail.getContext('2d');
+
+let W=0,H=0,DPR=1;
+let MX=0,MY=0,MW=0,MH=0,SC=1;              // the combined map
+let PW=0,PH=0,PCAP=0,PX0=0,PY0=0,PGX=0,PGY=0;  // the contact sheet
+
+function fit(){
+  DPR=Math.min(devicePixelRatio||1,2);
+  W=cv.width =Math.max(320,Math.round(stage.clientWidth *DPR));
+  H=cv.height=Math.max(240,Math.round(stage.clientHeight*DPR));
+  const M=16*DPR; PGX=13*DPR; PGY=10*DPR; PCAP=14*DPR;
+  const availH=H-2*M, availW=W-2*M;
+  // Two solves. The sheet wants to be as wide as the leftover column; four rows of two plus a
+  // caption line each may not fit that width in the available height, in which case the height
+  // wins and the sheet is centred in its column rather than left with a dead strip beside it.
+  const fromH=(availH-3*PGY-4*PCAP)/4;               // tallest panel four rows will allow
+  let sheetW=2*(fromH*ASP)+PGX;
+  MW=Math.min(availW-sheetW-PGX*2, availH*ASP);
+  if(MW<availW*0.36){ MW=availW*0.36; }              // the map has a floor
+  let colW=availW-MW-PGX*2;
+  PW=(colW-PGX)/2; PH=PW/ASP;
+  if(PH>fromH){ PH=fromH; PW=PH*ASP; }               // height-bound: centre what fits
+  sheetW=2*PW+PGX;
+  MH=MW/ASP; SC=MW/GW;
+  // centre the whole composition rather than the sheet inside a column, so a short-and-wide
+  // window does not open a canyon between the map and the contact sheet
+  const total=MW+PGX*2+sheetW;
+  MX=M+(availW-total)/2; MY=M+(availH-MH)/2;
+  PX0=MX+MW+PGX*2;
+  PY0=M+(availH-(4*PH+3*PGY+4*PCAP))/2;
+  trail.width=Math.max(1,Math.round(MW)); trail.height=Math.max(1,Math.round(MH));
+  tc.lineCap='round'; tc.clearRect(0,0,trail.width,trail.height);
+  ctx.imageSmoothingEnabled=true;
+}
+addEventListener('resize',fit); fit();
+
+/* previous positions, so a step can be stroked as a segment at full resolution */
+const pvx=fleets.map(()=>new Float32Array(CAP));
+const pvy=fleets.map(()=>new Float32Array(CAP));
+const pvn=new Int32Array(NF);
+
+function snapshot(){
+  for(let fi=0;fi<NF;fi++){ const f=fleets[fi];
+    pvx[fi].set(f.tx.subarray(0,f.n)); pvy[fi].set(f.ty.subarray(0,f.n)); pvn[fi]=f.n; }
+}
+/* Equilibrium of an additive buffer under a constant fade is deposit/fade. At 0.024/0.042 a
+   cell walked every single tick by one fleet settles at 0.57 of that fleet's colour, so even
+   a permanently trafficked corridor keeps its hue and leaves headroom for a second fleet. */
+const TDEP=0.024, TFADE=0.042;
+function strokeTrails(){
+  const s=trail.width/GW;
+  tc.globalCompositeOperation='lighter';
+  tc.lineWidth=Math.max(1,s*0.32);
+  for(let fi=0;fi<NF;fi++){
+    const f=fleets[fi], C=LOGIC[fi].c, px=pvx[fi], py=pvy[fi], n=Math.min(pvn[fi],f.n);
+    tc.beginPath();
+    let any=false;
+    for(let k=0;k<n;k++){
+      if(!f.alive[k])continue;
+      const ax=px[k],ay=py[k],bx2=f.tx[k],by=f.ty[k];
+      const dx=bx2-ax, dy=by-ay;
+      if(dx*dx+dy*dy>36) continue;                 // skip the torus wrap
+      if(dx===0&&dy===0) continue;
+      tc.moveTo(ax*s,ay*s); tc.lineTo(bx2*s,by*s); any=true;
+    }
+    if(!any)continue;
+    tc.strokeStyle=`rgba(${C[0]},${C[1]},${C[2]},${TDEP})`;
+    tc.stroke();
+  }
+  tc.globalCompositeOperation='source-over';
+}
+function fadeTrails(){
+  tc.globalCompositeOperation='destination-out';
+  tc.fillStyle=`rgba(0,0,0,${TFADE})`;
+  tc.fillRect(0,0,trail.width,trail.height);
+  tc.globalCompositeOperation='source-over';
+}
+
+let tick=0;
+function step(){
+  // `others` and `claimed` are full-grid sweeps; at 60Hz over 8 fleets that is 34M reads a
+  // second for numbers that barely move between ticks, so they refresh on a slower cadence.
+  if((tick&3)===0){
+    others.fill(0);
+    for(const f of fleets){ const m=f.mass; for(let i=0;i<NC;i++) others[i]+=m[i]; }
+  }
+  snapshot();
+  for(let fi=0;fi<NF;fi++) STEPPERS[fi](fleets[fi]);
+  strokeTrails();
+  // Upkeep. Every fleet pays to hold ground. Coral's permanence and the swarm's inability to
+  // keep what it takes are traits of those logics, not advantages handed to them.
+  // (An earlier cut used a lifetime mass budget; two fleets spent out early, decayed to zero
+  // reached, and the comparison ended up measuring the cap instead of the logic.)
+  for(let fi=0;fi<NF;fi++){ const f=fleets[fi];
+    const d = fi===4?0.9995:(fi===6?0.991:0.9968);
+    if(d<1){ const m=f.mass; for(let i=0;i<NC;i++) m[i]*=d; }
+  }
+  if((tick&3)===0){
+    claimed.fill(0);
+    for(const f of fleets){ let got=0; const m=f.mass;
+      for(let i=0;i<NC;i++) if(m[i]>0.22){ claimed[i]=1; if(people[i]>0) got+=people[i]; }
+      f.reached=got;
+    }
+  }
+  fadeTrails();
+  tick++;
+}
+
+/* ---------- one pass: body pixels, emissive pixels, and every metric ----------
+   `overlap` keeps its original definition exactly — cells where the 4-tick `others` sum clears
+   0.62 and more than one fleet is above 0.30 — so the numbers stay comparable with the run
+   that produced the recorded figures. The three metrics beside it are new, and they exist
+   because the first one answers a different question than the hypothesis asked. */
+const HB=64, hCnt=new Float32Array(HB), hMass=new Float32Array(HB);
+const MET={tick:0,dark:0,overlap:0,held:0,depth:0,top5:0,cover:0,heldLive:0};
+
+function composite(){
+  const d=bodyIm.data, e=emitIm.data;
+  let dark=0, overlap=0, held=0, heldLive=0, areaSum=0, totMass=0;
+  hCnt.fill(0); hMass.fill(0);
+  const m0=MASS[0],m1=MASS[1],m2=MASS[2],m3=MASS[3],
+        m4=MASS[4],m5=MASS[5],m6=MASS[6],m7=MASS[7];
+  // unrolled: this loop runs 71,400 times a frame across eight typed arrays, and an indexed
+  // inner loop over an array-of-arrays costs about 6ms a frame more than writing it out
+  let A0=0,A1=0,A2=0,A3=0,A4=0,A5=0,A6=0,A7=0;
+  for(let i=0,j=0;i<NC;i++,j+=4){
+    let tot=0,t1=0,t2=0,ti=0,n30=0,n22=0,v;
+    v=m0[i]; if(v>0.004){tot+=v; t1=v; ti=0;
+      if(v>0.22){A0++;n22++;} if(v>0.30)n30++;}
+    v=m1[i]; if(v>0.004){tot+=v; if(v>t1){t2=t1;t1=v;ti=1;}else if(v>t2)t2=v;
+      if(v>0.22){A1++;n22++;} if(v>0.30)n30++;}
+    v=m2[i]; if(v>0.004){tot+=v; if(v>t1){t2=t1;t1=v;ti=2;}else if(v>t2)t2=v;
+      if(v>0.22){A2++;n22++;} if(v>0.30)n30++;}
+    v=m3[i]; if(v>0.004){tot+=v; if(v>t1){t2=t1;t1=v;ti=3;}else if(v>t2)t2=v;
+      if(v>0.22){A3++;n22++;} if(v>0.30)n30++;}
+    v=m4[i]; if(v>0.004){tot+=v; if(v>t1){t2=t1;t1=v;ti=4;}else if(v>t2)t2=v;
+      if(v>0.22){A4++;n22++;} if(v>0.30)n30++;}
+    v=m5[i]; if(v>0.004){tot+=v; if(v>t1){t2=t1;t1=v;ti=5;}else if(v>t2)t2=v;
+      if(v>0.22){A5++;n22++;} if(v>0.30)n30++;}
+    v=m6[i]; if(v>0.004){tot+=v; if(v>t1){t2=t1;t1=v;ti=6;}else if(v>t2)t2=v;
+      if(v>0.22){A6++;n22++;} if(v>0.30)n30++;}
+    v=m7[i]; if(v>0.004){tot+=v; if(v>t1){t2=t1;t1=v;ti=7;}else if(v>t2)t2=v;
+      if(v>0.22){A7++;n22++;} if(v>0.30)n30++;}
+    // --- metrics -------------------------------------------------------------
+    if(people[i]>0.02 && claimed[i]===0) dark+=people[i];
+    if(others[i]>0.62 && n30>1) overlap++;
+    if(n22>0){ heldLive++; areaSum+=n22; }
+    if(claimed[i]>0){
+      held++; totMass+=tot;
+      let bin=(tot*8)|0; if(bin>HB-1)bin=HB-1; if(bin<0)bin=0;
+      hCnt[bin]++; hMass[bin]+=tot;
+    }
+    // --- body ---------------------------------------------------------------
+    // By tick 900 nearly the whole passable map is claimed by somebody, so a curve that
+    // reaches full colour at mass~1 paints the frame flat. The knee sits far out on purpose:
+    // held ground is a dark stain, only a genuinely dense corridor glows.
+    let r=TR[i],g=TG[i],b=TB[i];
+    let em=0;
+    if(tot>0.012){
+      const tv=(1-Math.exp(-0.42*tot))*0.66;        // bounded tone curve, hue preserved
+      const C=LOGIC[ti].c;
+      const q=t1>0?t2/t1:0, w=q*q*0.50;             // contested ground pales toward bone
+      const cr=C[0]+(BONE[0]-C[0])*w, cg=C[1]+(BONE[1]-C[1])*w, cb=C[2]+(BONE[2]-C[2])*w;
+      r+=(cr-r)*tv; g+=(cg-g)*tv; b+=(cb-b)*tv;     // lerp: cannot exceed max(terrain,colour)
+      em=tv*tv*(0.55+0.45*w);
+      if(em>0.26){
+        const a=(em-0.26)/0.74;
+        e[j]=cr; e[j+1]=cg; e[j+2]=cb; e[j+3]=a*a*225;
+      } else e[j+3]=0;
+    } else e[j+3]=0;
+    d[j]=r; d[j+1]=g; d[j+2]=b; d[j+3]=255;
+  }
+  // corridor concentration: what share of all held mass sits in the densest 5% of held cells
+  let top5=0;
+  if(held>0 && totMass>0){
+    const want=held*0.05; let c=0, m=0;
+    for(let k=HB-1;k>=0;k--){
+      if(c>=want) break;
+      const take=Math.min(hCnt[k], want-c);
+      if(hCnt[k]>0) m += hMass[k]*(take/hCnt[k]);
+      c+=take;
+    }
+    top5=m/totMass;
+  }
+  fleets[0].area=A0; fleets[1].area=A1; fleets[2].area=A2; fleets[3].area=A3;
+  fleets[4].area=A4; fleets[5].area=A5; fleets[6].area=A6; fleets[7].area=A7;
+  MET.tick=tick; MET.dark=dark; MET.overlap=overlap; MET.held=held;
+  MET.heldLive=heldLive; MET.depth=heldLive?areaSum/heldLive:0;
+  MET.top5=top5; MET.cover=held/PASSN;
+  bodyCx.putImageData(bodyIm,0,0);
+  emitCx.putImageData(emitIm,0,0);
+}
+
+/* the small multiples — same terrain, same tone curve, one logic each.
+   Repainted one panel per frame, round robin: eight full-grid passes in a single frame is a
+   571k-pixel spike every fifth frame, and the p95 is what a viewer feels, not the median. */
+function paintPanel(f){
+  const d=panIm[f].data, m=MASS[f], C=LOGIC[f].c;
+  for(let i=0,j=0;i<NC;i++,j+=4){
+    let r=TR[i]*0.90, g=TG[i]*0.90, b=TB[i]*0.90;
+    const mv=m[i];
+    if(mv>0.008){
+      const v=mv/(mv+0.50)*0.88;   // gentle: a fleet that covers everything must still
+      r+=(C[0]-r)*v; g+=(C[1]-g)*v; b+=(C[2]-b)*v;   // show where it is thick
+    }
+    d[j]=r; d[j+1]=g; d[j+2]=b; d[j+3]=255;
+  }
+  panCx[f].putImageData(panIm[f],0,0);
+}
+function paintPanels(){ for(let f=0;f<NF;f++) paintPanel(f); }
+
+const peo=[];                       // the somebodies, as a list so we can draw them crisply
+for(let y=0;y<GH;y++)for(let x=0;x<GW;x++){const i=y*GW+x; if(people[i]>0.05) peo.push(x,y,i);}
+
+function drawPeople(){
+  // One dot per inhabited cell, so a settlement reads as a crowd rather than a cloud. The
+  // radius must stay under half the cell pitch at every window size or the dots merge back
+  // into the white blobs this replaced — hence the cap against SC, not a fixed floor.
+  const rad=Math.max(0.55,SC*0.34);
+  ctx.save(); ctx.translate(MX,MY);
+  // reached, in bone — quiet, granular
+  ctx.beginPath();
+  for(let q=0;q<peo.length;q+=3){
+    const i=peo[q+2]; if(claimed[i]===0)continue;
+    const s=rad*(0.5+cl(people[i]*1.5,0,1)*0.75);
+    const x=peo[q]*SC, y=peo[q+1]*SC;
+    ctx.moveTo(x+s,y); ctx.arc(x,y,s,0,6.283);
+  }
+  ctx.fillStyle='rgba(226,232,240,0.52)'; ctx.fill();
+  // unreached, in burn — with a halo, because this is the number in the caption
+  ctx.beginPath(); let any=false;
+  for(let q=0;q<peo.length;q+=3){
+    const i=peo[q+2]; if(claimed[i]!==0)continue;
+    const s=rad*(0.55+cl(people[i]*1.5,0,1)*0.8);
+    const x=peo[q]*SC, y=peo[q+1]*SC;
+    ctx.moveTo(x+s,y); ctx.arc(x,y,s,0,6.283); any=true;
+  }
+  if(any){
+    ctx.globalCompositeOperation='lighter';
+    ctx.fillStyle=`rgba(${BURN[0]},${BURN[1]},${BURN[2]},0.30)`;
+    ctx.filter=`blur(${Math.max(1,SC*0.9)}px)`; ctx.fill(); ctx.filter='none';
+    ctx.globalCompositeOperation='source-over';
+    ctx.fillStyle=`rgba(${BURN[0]},${BURN[1]},${BURN[2]},0.95)`; ctx.fill();
+  }
+  ctx.restore();
+}
+
+const AZ='ABCDEFGH';
+function label(t,x,y,size,alpha,weight){
+  ctx.font=`${weight||400} ${size}px "Helvetica Neue",Helvetica,Arial,sans-serif`;
+  ctx.fillStyle=`rgba(233,237,242,${alpha})`;
+  ctx.fillText(t,x,y);
+}
+function fits(t,size,weight,room){
+  ctx.font=`${weight||400} ${size}px "Helvetica Neue",Helvetica,Arial,sans-serif`;
+  return ctx.measureText(t).width<=room;
+}
+function drawSheet(){
+  ctx.textBaseline='alphabetic'; ctx.textAlign='left';
+  for(let f=0;f<NF;f++){
+    const col=f&1, row=f>>1;
+    const x=PX0+col*(PW+PGX), y=PY0+row*(PH+PCAP+PGY);
+    ctx.drawImage(panCv[f],x,y,PW,PH);
+    ctx.strokeStyle='rgba(233,237,242,0.13)'; ctx.lineWidth=1*DPR;
+    ctx.strokeRect(Math.round(x)+0.5,Math.round(y)+0.5,Math.round(PW),Math.round(PH));
+    // inside, top-left: which logic this is
+    const L=LOGIC[f];
+    ctx.fillStyle='rgba(0,0,0,0.50)'; ctx.fillRect(x,y,PW,15*DPR);
+    const nm=`${AZ[f]} · ${L.nm.toUpperCase()}`;
+    label(nm, x+6*DPR, y+11*DPR, 9.5*DPR, .95, 700);
+    const nmW=ctx.measureText(nm).width;
+    ctx.textAlign='right';
+    if(fits(L.model.toUpperCase(),7.5*DPR,400,PW-nmW-18*DPR))
+      label(L.model.toUpperCase(), x+PW-6*DPR, y+11*DPR, 7.5*DPR, .45);
+    // under the panel, on black: what it holds and who it got to
+    const got=`${fleets[f].area.toLocaleString()} held · ${Math.round(fleets[f].reached).toLocaleString()} reached`;
+    label(got, x+PW, y+PH+11*DPR, 8.5*DPR, .62);
+    const gotW=ctx.measureText(got).width;
+    ctx.textAlign='left';
+    if(fits(L.spec.toUpperCase(),7.5*DPR,400,PW-gotW-10*DPR))
+      label(L.spec.toUpperCase(), x+1*DPR, y+PH+11*DPR, 7.5*DPR, .30);
+  }
+}
+
+let msAvg=0;
+function render(){
+  ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1;
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+
+  // 1 · body
+  ctx.drawImage(bodyCv,MX,MY,MW,MH);
+  // 2 · motion — 'screen' asymptotes at white instead of clipping through it
+  ctx.globalCompositeOperation='screen'; ctx.globalAlpha=0.92;
+  ctx.drawImage(trail,MX,MY,MW,MH);
+  // 3 · bloom, from the thresholded emissive only
+  ctx.globalCompositeOperation='lighter';
+  const k=MW*0.011;
+  ctx.globalAlpha=0.46; ctx.drawImage(emitCv,MX-k,MY-k,MW+2*k,MH+2*k);
+  ctx.globalAlpha=0.20; ctx.drawImage(emitCv,MX-k*2.6,MY-k*2.6,MW+5.2*k,MH+5.2*k);
+  ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1;
+  // 4 · the somebodies
+  drawPeople();
+  // frame
+  ctx.strokeStyle='rgba(233,237,242,0.15)'; ctx.lineWidth=1*DPR;
+  ctx.strokeRect(Math.round(MX)+0.5,Math.round(MY)+0.5,Math.round(MW),Math.round(MH));
+  ctx.textBaseline='alphabetic'; ctx.textAlign='left';
+  ctx.fillStyle='rgba(0,0,0,0.50)'; ctx.fillRect(MX,MY,MW,17*DPR);
+  label(`ALL EIGHT · ONE GROUND · ${SENSE>0.5?'AWARE':'BLIND'} · TICK ${tick}`,
+        MX+8*DPR, MY+12*DPR, 10*DPR, .95, 700);
+  ctx.textAlign='right';
+  label('HUE = FLEET HOLDING MOST · PALE = CONTESTED · BURN DOTS = UNREACHED',
+        MX+MW-8*DPR, MY+12*DPR, 8*DPR, .42);
+  ctx.textAlign='left';
+
+  drawSheet();
+}
+
+/* ---------- chrome ---------- */
+const elDark=document.getElementById('dark');
+const elMs=document.getElementById('ms'), elHold=document.getElementById('hold');
+const elNow=document.getElementById('lnow');
+const mDark=document.getElementById('mDark'), mHeld=document.getElementById('mHeld');
+const mStk=document.getElementById('mStk'), mDep=document.getElementById('mDep');
+const mTop=document.getElementById('mTop');
+const armsEl=document.getElementById('arms');
+(function buildArms(){
+  [['0','blind to each other'],['1','aware of each other']].forEach(([v,t])=>{
+    const q=new URLSearchParams(location.search); q.set('sense',v);
+    const a=document.createElement('a'); a.href=location.pathname+'?'+q.toString();
+    a.textContent=t; if((SENSE>0.5?'1':'0')===v) a.className='on';
+    armsEl.appendChild(a);
+  });
+})();
+elNow.textContent = SENSE>0.5?'aware · live':'blind · live';
+const rowNow=document.getElementById(SENSE>0.5?'rowAware':'rowBlind');
+rowNow.style.opacity=.75;
+
+window.__RUN_TO=(n)=>{ while(tick<n) step(); composite(); paintPanels(); return {...MET}; };
+window.__HOLD=(v)=>{ HOLD=!!v; };
+
+let last=0, acc=0, pf=0;
+function frame(t){
+  requestAnimationFrame(frame);
+  const t0=performance.now();
+  let ff=false;
+  if(TO && tick<TO){ while(tick<TO) step(); ff=true; }  // exact-tick capture for verification
+  if(!HOLD){
+    const dt=Math.min(0.05,(t-last)/1000); last=t;
+    acc+=dt;
+    while(acc>1/60){ step(); acc-=1/60; }
+  } else last=t;
+  composite();
+  paintPanel(pf%NF);
+  render();
+  pf++;
+  const ms=performance.now()-t0;
+  if(!ff) msAvg = msAvg? msAvg*0.90+ms*0.10 : ms;   // never let a fast-forward frame pollute it
+  window.__M={...MET, ms:+msAvg.toFixed(2)};
+  if((pf&7)===0){
+    elDark.textContent=Math.round(MET.dark).toLocaleString();
+    elMs.textContent=msAvg.toFixed(1)+' ms';
+    elHold.textContent=HOLD?('held at '+tick):'';
+    mDark.textContent=Math.round(MET.dark).toLocaleString();
+    mHeld.textContent=MET.held.toLocaleString();
+    mStk.textContent=(MET.held?100*MET.overlap/MET.held:0).toFixed(1)+'%';
+    mDep.textContent=MET.depth.toFixed(2);
+    mTop.textContent=(100*MET.top5).toFixed(1)+'%';
+  }
+}
+requestAnimationFrame(frame);
+</script>
+  <script src="/nav.js" defer></script>
+</body>
+</html>

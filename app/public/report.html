@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AURAWORLD: the visual report</title>
+<link rel="icon" href="/favicon.svg">
+<style>
+  :root {
+    --ground: #0a0a0a;
+    --ink: #f2f2f2;
+    --secondary: #8a8a8a;
+    --hairline: #2a2a2a;
+    --signal: #8fd8ff;
+    --ember: #ff9a3d;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; background: #000; }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    margin: 0 auto;
+    padding: 56px 64px 64px;
+    background: var(--ground);
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  @media screen {
+    .slide { margin: 24px auto; outline: 1px solid var(--hairline); }
+  }
+
+  .kicker {
+    margin: 0 0 18px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    max-width: 1080px;
+  }
+
+  p { margin: 14px 0 0; font-size: 17px; line-height: 1.5; }
+  .dim { color: var(--secondary); }
+
+  .foot {
+    position: absolute;
+    left: 64px;
+    right: 64px;
+    bottom: 26px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  .shot {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--hairline);
+  }
+
+  .row { display: flex; gap: 36px; margin-top: 26px; }
+  .col { flex: 1 1 0; min-width: 0; }
+
+  .nums { display: flex; gap: 44px; margin-top: 24px; }
+  .num .big {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .num .lbl { margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--secondary); max-width: 230px; }
+  .signal { color: var(--signal); }
+  .ember { color: var(--ember); }
+
+  ul { margin: 18px 0 0; padding-left: 20px; }
+  li { font-size: 17px; line-height: 1.55; margin-top: 10px; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; margin-top: 22px; }
+  .card { border-top: 1px solid var(--hairline); padding-top: 10px; }
+  .card .name {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .card .what { font-size: 14px; line-height: 1.45; color: var(--secondary); margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<!-- 1 · title -->
+<section class="slide">
+  <p class="kicker">AURAWORLD &middot; hackathon submission &middot; the visual report</p>
+  <h1 style="max-width:1120px">We build simulated disasters and hand the rescue work to
+  fleets of AI agents. Each fleet is organized the way a living thing grows,
+  and that growth rule decided who got seen, proven safe, and saved.</h1>
+  <div class="row" style="margin-top:30px">
+    <div class="col" style="flex:1.5">
+      <img class="shot" src="guide/shots/strata.png" alt="Five stacked translucent layers of the same territory; the bottom is full of settlements and the top is nearly empty." style="max-height:330px; object-fit:cover; object-position:center 20%">
+    </div>
+    <div class="col">
+      <p><span class="signal">Watch exactly where real people fall out of the
+      picture on their way to the person who decides.</span></p>
+      <p class="dim">The same flooded territory, five summarizing layers high.
+      The bottom layer holds every person and building. The top layer holds
+      what the decision office acts on. A settlement's column of light stops
+      where the fleet lost track of it.</p>
+    </div>
+  </div>
+  <div class="foot"><span>AURAWORLD</span><span>240 real Claude agents across all runs &middot; page 1 of 8</span></div>
+</section>
+
+<!-- 2 · method -->
+<section class="slide">
+  <p class="kicker">How we keep the results honest</p>
+  <h2>Predictions are saved publicly before anything runs, and scripts count every score.</h2>
+  <ul style="max-width:1000px">
+    <li>Every world is generated from a committed seed, and the same seed
+    produces byte-identical event logs, asserted on every run.</li>
+    <li>Exactly one rule differs between compared runs — the growth rule under
+    test — and budgets are matched and asserted in code.</li>
+    <li>The organizing rules are enforced mechanically by the harness. The AI
+    agents only read, judge, and choose.</li>
+    <li>Scoring is a script run against an answer key sealed before the
+    experiment. Nobody grades by opinion.</li>
+    <li>Thirteen of our own pre-registered predictions have been refuted so
+    far, and every refutation is published beside the survivors.</li>
+  </ul>
+  <div class="foot"><span>AURAWORLD</span><span>page 2 of 8</span></div>
+</section>
+
+<!-- 3 · first test -->
+<section class="slide">
+  <p class="kicker">The first test &middot; a deterministic simulation</p>
+  <h2>A flood hit 64 communities. The way reports were summarized decided who got help.</h2>
+  <div class="row">
+    <div class="col" style="flex:1.35">
+      <img class="shot" src="guide/shots/twin-live.png" alt="Two panels of the same 64 communities; on the left many have dimmed to grey, on the right all stay lit.">
+    </div>
+    <div class="col">
+      <div class="nums" style="flex-direction:column; gap:22px; margin-top:6px">
+        <div class="num"><div class="big ember">26 of 64</div><div class="lbl">communities erased from the briefing under the standard crowding rule, while survey visits stayed perfect</div></div>
+        <div class="num"><div class="big signal">64 of 64</div><div class="lbl">communities kept visible by the fungal-network merging rule, at the same cost</div></div>
+        <div class="num"><div class="big">8,935 &rarr; 16,299</div><div class="lbl">people the decision office could see, before and after the rule change</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>AURAWORLD</span><span>records: docs/two-shapes &middot; page 3 of 8</span></div>
+</section>
+
+<!-- 4 · the catalog -->
+<section class="slide">
+  <p class="kicker">The growth intelligence</p>
+  <h2>Eight growth rules from living networks, translated into exact, runnable code.</h2>
+  <div class="row">
+    <div class="col" style="flex:1.25">
+      <img class="shot" src="guide/shots/organisms-grid.png" alt="Eight small living simulations, one per growth rule, each drawing its network in white on black.">
+    </div>
+    <div class="col">
+      <div class="cards">
+        <div class="card"><div class="name">Slime mould</div><div class="what">feed the busy paths, abandon the quiet ones</div></div>
+        <div class="card"><div class="name">Fungal network</div><div class="what">connect neighbors so they share and survive</div></div>
+        <div class="card"><div class="name">Root tip</div><div class="what">go get the missing fact directly</div></div>
+        <div class="card"><div class="name">Lichen</div><div class="what">pair two partners with opposite weaknesses</div></div>
+        <div class="card"><div class="name">Vascular</div><div class="what">one trunk, ranked branches, locked tips</div></div>
+        <div class="card"><div class="name">Coral</div><div class="what">add layer on layer, erase nothing</div></div>
+        <div class="card"><div class="name">Bacterial swarm</div><div class="what">herd toward the strongest signal</div></div>
+        <div class="card"><div class="name">Tendril</div><div class="what">sweep until you find support, then wrap it</div></div>
+      </div>
+      <p class="dim" style="font-size:14px">Seven of the eight have been through
+      real experiments. The organizing rule runs as harness machinery; the
+      agents do the thinking.</p>
+    </div>
+  </div>
+  <div class="foot"><span>AURAWORLD</span><span>page 4 of 8</span></div>
+</section>
+
+<!-- 5 · live run: storm coast -->
+<section class="slide">
+  <p class="kicker">Live run one &middot; 24 real Claude agents</p>
+  <h2>Phone callers lied about a flood, and the fleet forced to double-check reached a third fewer people.</h2>
+  <div class="row">
+    <div class="col" style="flex:1.35">
+      <img class="shot" src="guide/shots/boat.png" alt="Two coastlines under the same storm; one sea is knotted with orange verification marks.">
+    </div>
+    <div class="col">
+      <div class="nums" style="flex-direction:column; gap:22px; margin-top:6px">
+        <div class="num"><div class="big">227 = 227 = 227</div><div class="lbl">people reached in the honest rounds — all three organizing rules made identical, perfect picks</div></div>
+        <div class="num"><div class="big ember">131 of 207</div><div class="lbl">people reached under mandatory go-and-look checking, every flight spent on the same liar — the failure our simulation predicted</div></div>
+        <div class="num"><div class="big signal">207 of 207</div><div class="lbl">people reached by the fused-map fleet, because its merging agent discounted the lies on its own</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>AURAWORLD</span><span>records: docs/trust/the-boat/live &middot; page 5 of 8</span></div>
+</section>
+
+<!-- 6 · live run: bridge -->
+<section class="slide">
+  <p class="kicker">Live run two &middot; 22 real Claude agents</p>
+  <h2>Half a bridge-inspection office was destroyed, and only the team that kept records of its discards stayed perfect.</h2>
+  <div class="row">
+    <div class="col" style="flex:1.35">
+      <img class="shot" src="guide/shots/bridge.png" alt="Two towers of glowing evidence links at the moment ten summarizing computers fail in both.">
+    </div>
+    <div class="col">
+      <div class="nums" style="flex-direction:column; gap:22px; margin-top:6px">
+        <div class="num"><div class="big signal">8 of 8</div><div class="lbl">safety statements still provable after damage for the team that recorded every discarded source</div></div>
+        <div class="num"><div class="big">7 of 8</div><div class="lbl">for the single-source team — the predicted collapse failed because real summarizers carry sources in their prose</div></div>
+        <div class="num"><div class="big">524</div><div class="lbl">tombstones — small records of every cut — held by the record-keeping tower when the damage came</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>AURAWORLD</span><span>records: docs/trust/the-bridge/live &middot; page 6 of 8</span></div>
+</section>
+
+<!-- 7 · live run: deadlines + the fleet law -->
+<section class="slide">
+  <p class="kicker">Live runs three and four &middot; 22 and 99 real Claude agents</p>
+  <h2>With slack, every organization saved everyone. At a tight budget, the organizing rule decided which emergencies got caught.</h2>
+  <div class="row">
+    <div class="col" style="flex:1.35">
+      <img class="shot" src="guide/shots/fleet-live.png" alt="Three panels of the same 24 towns; the middle panel has gone half grey while the other two stay lit.">
+    </div>
+    <div class="col">
+      <div class="nums" style="flex-direction:column; gap:22px; margin-top:6px">
+        <div class="num"><div class="big">5 of 5, three ways</div><div class="lbl">deadline emergencies served by every rerouting rule in the deadline region — and one dispatcher legally shortened its routes to dodge its own commitment rule</div></div>
+        <div class="num"><div class="big ember">12 of 24</div><div class="lbl">towns the slime-mould fleet could still see at a 50 percent reading budget; it left an erupted emergency unread for three rounds</div></div>
+        <div class="num"><div class="big signal">20 of 24</div><div class="lbl">towns held by the fungal fleet, whose chief aided both emergencies before they erupted</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>AURAWORLD</span><span>records: docs/trust/the-map/live &middot; docs/two-shapes/fleet-shapes &middot; page 7 of 8</span></div>
+</section>
+
+<!-- 8 · the law and the ask -->
+<section class="slide">
+  <p class="kicker">The finding, and the request</p>
+  <h2>Growth rules decide the outcome when the budget binds. We want the compute to find exactly where each rule stops being safe.</h2>
+  <div class="row" style="margin-top:10px">
+    <div class="col">
+      <p><span class="signal">What we found at small scale.</span> Where a rule
+      truly forced the agents' hands, the simulated failures replicated exactly
+      with real agents. Where any slack remained, capable agents rescued every
+      structure. The choice of organizing rule is cheap insurance that pays out
+      precisely when capacity is scarce.</p>
+      <p><span class="signal">What scale unlocks.</span> Thresholds — the exact
+      budget where each rule flips from asset to liability — and the
+      monoculture question: do seven institutions sharing one model fail
+      together, where seven genuinely different model families catch each
+      other?</p>
+    </div>
+    <div class="col">
+      <div class="nums" style="flex-direction:column; gap:18px; margin-top:2px">
+        <div class="num"><div class="big">~1,000,000</div><div class="lbl">agent decisions planned: fleets of 100 to 300 agents, 5 to 10 rounds, 3 to 5 rules, 10 seeded trials, about 25 budget configurations</div></div>
+        <div class="num"><div class="big">7 &times; 24 GB</div><div class="lbl">one local model server per card (Qwen3 32B and 8B, Gemma 3 12B, Mistral Small 24B, served by vLLM); full 168 GB needed for the seven-family monoculture run</div></div>
+        <div class="num"><div class="big">40&ndash;60 h</div><div class="lbl">expected usage across the competition window, from smoke runs to threshold sweeps to repeats</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>AURAWORLD</span><span>public repository with logs, keys, scorecards, and re-runnable scoring &middot; page 8 of 8</span></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>THE MAP — AURAWORLD</title>
+<link rel="icon" href="/favicon.svg" />
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#e9edf2;
+    -webkit-font-smoothing:antialiased}
+
+  /* width/height REQUIRED: renderer.setSize(w,h,false) leaves canvas.style unset, and a
+     replaced element with width:auto lays out at its BACKING-STORE size in CSS pixels
+     (3024x1720 at dpr 2) anchored top-left, which throws the whole scene off-frame.
+     The canvas is the FULL window; the two black bands are opaque and sit on top of it,
+     and the GL viewports are scissored to the strip between them, so no artwork is ever
+     hidden under type. */
+  #gl{position:fixed;inset:0;width:100%;height:100%;display:block}
+
+  .band{position:fixed;left:0;right:0;background:#000;z-index:5;user-select:none}
+  #head{top:0;padding:14px 26px 12px;border-bottom:1px solid rgba(255,255,255,.10)}
+  #foot{bottom:0;padding:11px 26px 13px;border-top:1px solid rgba(255,255,255,.10)}
+
+  h1{font-size:17px;font-weight:700;letter-spacing:.10em;margin:0;text-transform:uppercase}
+  .sub{font-size:11.5px;line-height:1.5;opacity:.52;margin-top:6px;max-width:660px}
+  .k{font-size:9px;letter-spacing:.19em;text-transform:uppercase;opacity:.40}
+  .num{font-variant-numeric:tabular-nums}
+  .row{display:flex;align-items:flex-start;gap:26px}
+  .halves{display:flex;gap:0;margin-top:11px}
+  .halves>div{flex:1 1 0;min-width:0;padding-right:26px}
+  .halves>div+div{padding-left:26px;padding-right:0;border-left:1px solid rgba(255,255,255,.10)}
+  .name{font-size:12.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+  .gloss{font-size:10.5px;line-height:1.5;opacity:.46;margin-top:4px}
+
+  .big{font-size:18px;line-height:1.25;letter-spacing:-.01em;white-space:nowrap}
+  .big b{font-weight:700;font-variant-numeric:tabular-nums}
+  .big span{font-weight:400;font-size:11px;letter-spacing:0;opacity:.62}
+  .big .sep{opacity:.22;font-weight:400;padding:0 7px;font-size:14px}
+  .fin{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.50;margin-top:7px}
+  .fin b{font-weight:700;opacity:.95}
+  .cold{color:#7df9ff}
+  .ember{color:#ff9d5c}
+
+  /* scrub */
+  #bar{display:flex;align-items:center;gap:14px}
+  #scrub{-webkit-appearance:none;appearance:none;flex:1 1 auto;height:3px;
+    background:rgba(255,255,255,.13);outline:none;cursor:pointer;pointer-events:auto}
+  #scrub::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:13px;
+    background:#e9edf2;cursor:pointer}
+  #tick{font-size:10px;letter-spacing:.15em;opacity:.55;white-space:nowrap}
+
+  /* plate frames — instrument marks, never type */
+  .plate{position:fixed;z-index:2;pointer-events:none;
+    border:1px solid rgba(255,255,255,.06)}
+  .plate i{position:absolute;width:13px;height:13px;border:0 solid rgba(255,255,255,.26)}
+  .plate i.tl{left:-1px;top:-1px;border-left-width:1px;border-top-width:1px}
+  .plate i.tr{right:-1px;top:-1px;border-right-width:1px;border-top-width:1px}
+  .plate i.bl{left:-1px;bottom:-1px;border-left-width:1px;border-bottom-width:1px}
+  .plate i.br{right:-1px;bottom:-1px;border-right-width:1px;border-bottom-width:1px}
+  #gut{position:fixed;z-index:3;pointer-events:none;background:#000}
+  #gutline{position:fixed;z-index:4;pointer-events:none;width:1px;
+    background:rgba(255,255,255,.13)}
+
+  /* lab bench — house convention, hidden until L */
+  #panel{position:fixed;left:26px;bottom:150px;width:236px;padding:15px 17px;z-index:9;
+    background:rgba(3,6,9,.93);border:1px solid rgba(255,255,255,.14);display:none}
+  #panel.on{display:block}
+  #panel label{display:block;margin-top:12px;font-size:9.5px;letter-spacing:.16em;
+    text-transform:uppercase;opacity:.55}
+  #panel .v{float:right;opacity:.9;font-variant-numeric:tabular-nums}
+  #panel input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:3px;
+    margin-top:6px;background:#1b242e;outline:none}
+  #panel input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;
+    height:12px;border-radius:50%;background:#7df9ff;cursor:pointer}
+  #meter{font-size:19px;font-variant-numeric:tabular-nums;margin-top:5px}
+  #meter2{font-size:9.5px;letter-spacing:.13em;opacity:.5;margin-top:3px}
+  .lesson{font-size:12px;line-height:1.55;color:#9a9a9a;margin-top:10px}
+  .lesson b{color:#e9edf2;font-weight:700;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;margin-right:9px}
+</style>
+</head>
+<body>
+
+<canvas id="gl"></canvas>
+
+<div id="gut"></div><div id="gutline"></div>
+<div class="plate" id="plateA"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
+<div class="plate" id="plateB"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
+
+<div class="band" id="head">
+  <div class="row">
+    <div style="flex:1 1 auto">
+      <h1>The Map</h1>
+      <div class="sub">Emergencies keep breaking out across 40 towns — 15,000 people, and
+        every emergency has a deadline. Six crews respond on foot. The dispatcher's picture
+        of the region refreshes only every 20 minutes, so the desk is always working from a
+        slightly old map. The question: when a fresh map lands and a crew is already walking
+        somewhere, do you turn them around? Blue: people being served. Orange: waste — ground
+        walked back over, or a deadline missed. Watch where the orange ends up.</div>
+    </div>
+    <div style="flex:0 0 auto;text-align:right">
+      <div class="k">the same storm, twice</div>
+      <div class="k num" id="meta" style="opacity:.62;margin-top:7px">—</div>
+      <div class="k num" id="meta2" style="opacity:.62;margin-top:4px">—</div>
+      <div class="k num" id="meta3" style="opacity:.62;margin-top:4px">—</div>
+    </div>
+  </div>
+  <div class="halves">
+    <div>
+      <div class="name">Chase the map</div>
+      <div class="gloss">Replans like SLIME MOULD — regrow toward whatever looks richest right
+        now. Every fresh map, every crew turns from wherever it stands, and the road behind
+        them re-ignites orange: cleared ground, walked back over, logged as waste.</div>
+    </div>
+    <div>
+      <div class="name">Reroute at the tips</div>
+      <div class="gloss">Commits like a TREE — the trunk never regrows, only the twigs. The
+        town a crew is walking toward stays locked; only its later stops may change. The
+        threads run long and clean — watch who pays for that.</div>
+    </div>
+  </div>
+</div>
+
+<div class="band" id="foot">
+  <div id="bar">
+    <div class="k" style="opacity:.35">tick</div>
+    <input id="scrub" type="range" min="0" max="300" step="1" value="0" />
+    <div class="num" id="tick">000 / 300</div>
+  </div>
+  <div class="halves">
+    <div>
+      <div class="big"><b class="cold" id="servedA">0</b><span> people served in window</span><span class="sep">·</span><b
+        class="ember" id="missA">0</b><span> missed</span><span class="sep">·</span><b
+        class="ember" id="churnA">0</b><span> km walked back</span></div>
+      <div class="fin num" id="finA">—</div>
+    </div>
+    <div>
+      <div class="big"><b class="cold" id="servedB">0</b><span> people served in window</span><span class="sep">·</span><b
+        class="ember" id="missB">0</b><span> missed</span><span class="sep">·</span><b
+        class="ember" id="churnB">0</b><span> km walked back</span></div>
+      <div class="fin num" id="finB">—</div>
+    </div>
+  </div>
+  <div class="lesson"><b>The lesson</b>The dispatch desk that turned its rescue crews around every time a newer map arrived wasted 82 km of walking and still reached almost every emergency before its deadline. The desk that kept its crews on their planned routes wasted nothing and let ten emergencies expire. Acting on new information saved more people than sticking to the plan, every time we tested it.</div>
+  <div class="row" style="margin-top:9px">
+    <div class="k num" id="pick" style="flex:1 1 auto;opacity:.55">—</div>
+    <div class="k" style="flex:0 0 auto;opacity:.30">space — pause &nbsp;·&nbsp; l — lab &nbsp;·&nbsp; point at a crew or a site</div>
+  </div>
+</div>
+
+<div id="panel">
+  <div class="k" style="opacity:.6">lab bench — press l</div>
+  <div id="meter">—</div>
+  <div id="meter2">—</div>
+  <label>exposure <span class="v" id="vGain">1.00</span>
+    <input id="pGain" type="range" min="0.35" max="2.20" step="0.01" value="1.00"></label>
+  <label>elevation <span class="v" id="vElev">54.0</span>
+    <input id="pElev" type="range" min="20" max="80" step="0.5" value="54"></label>
+  <label>azimuth <span class="v" id="vAzim">0.0</span>
+    <input id="pAzim" type="range" min="-40" max="40" step="0.5" value="0"></label>
+  <label>distance <span class="v" id="vDist">6.30</span>
+    <input id="pDist" type="range" min="4" max="12" step="0.05" value="6.3"></label>
+  <label>ticks per second <span class="v" id="vRate">3.00</span>
+    <input id="pRate" type="range" min="0.5" max="12" step="0.1" value="3.0"></label>
+</div>
+
+<script type="module" src="/src/mapworld/main.ts"></script>
+  <script src="/nav.js" defer></script>
+  <script src="/learned.js" defer></script>
+</body>
+</html>

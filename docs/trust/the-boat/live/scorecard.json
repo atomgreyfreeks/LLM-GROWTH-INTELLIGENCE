@@ -1,0 +1,172 @@
+{
+  "perRound": [
+    {
+      "round": 1,
+      "fired": false,
+      "bacterial": {
+        "picks": [
+          "Greywater Stairs",
+          "Herring Quay"
+        ],
+        "reached": 77
+      },
+      "lichen": {
+        "picks": [
+          "Greywater Stairs",
+          "Herring Quay"
+        ],
+        "reached": 77
+      },
+      "root": {
+        "picks": [
+          "Greywater Stairs",
+          "Herring Quay"
+        ],
+        "reached": 77
+      }
+    },
+    {
+      "round": 2,
+      "fired": false,
+      "bacterial": {
+        "picks": [
+          "Channel Head",
+          "Osprey Point"
+        ],
+        "reached": 77
+      },
+      "lichen": {
+        "picks": [
+          "Channel Head",
+          "Osprey Point"
+        ],
+        "reached": 77
+      },
+      "root": {
+        "picks": [
+          "Channel Head",
+          "Osprey Point"
+        ],
+        "reached": 77
+      }
+    },
+    {
+      "round": 3,
+      "fired": false,
+      "bacterial": {
+        "picks": [
+          "Osprey Point",
+          "Greywater Stairs"
+        ],
+        "reached": 73
+      },
+      "lichen": {
+        "picks": [
+          "Osprey Point",
+          "Greywater Stairs"
+        ],
+        "reached": 73
+      },
+      "root": {
+        "picks": [
+          "Osprey Point",
+          "Greywater Stairs"
+        ],
+        "reached": 73
+      }
+    },
+    {
+      "round": 4,
+      "fired": true,
+      "bacterial": {
+        "picks": [
+          "Pilot Green",
+          "Channel Head"
+        ],
+        "reached": 76
+      },
+      "lichen": {
+        "picks": [
+          "Pilot Green",
+          "Lantern Hill"
+        ],
+        "reached": 69
+      },
+      "root": {
+        "picks": [
+          "Pilot Green"
+        ],
+        "reached": 50
+      }
+    },
+    {
+      "round": 5,
+      "fired": true,
+      "bacterial": {
+        "picks": [
+          "Cockle Strand",
+          "Ternwick"
+        ],
+        "reached": 63
+      },
+      "lichen": {
+        "picks": [
+          "Cockle Strand",
+          "Ternwick"
+        ],
+        "reached": 63
+      },
+      "root": {
+        "picks": [
+          "Cockle Strand"
+        ],
+        "reached": 38
+      }
+    },
+    {
+      "round": 6,
+      "fired": true,
+      "bacterial": {
+        "picks": [
+          "Wrack End",
+          "Channel Head"
+        ],
+        "reached": 68
+      },
+      "lichen": {
+        "picks": [
+          "Wrack End",
+          "Cockle Strand"
+        ],
+        "reached": 56
+      },
+      "root": {
+        "picks": [
+          "Wrack End"
+        ],
+        "reached": 43
+      }
+    }
+  ],
+  "totals": {
+    "bacterial": {
+      "clean": 227,
+      "poison": 207,
+      "verifies": 0
+    },
+    "lichen": {
+      "clean": 227,
+      "poison": 188,
+      "verifies": 0
+    },
+    "root": {
+      "clean": 227,
+      "poison": 131,
+      "verifies": 3
+    }
+  },
+  "bestPossible": {
+    "clean": 227,
+    "poison": 207
+  }
+}

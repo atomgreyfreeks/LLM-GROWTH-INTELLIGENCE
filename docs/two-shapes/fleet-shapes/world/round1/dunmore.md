@@ -1,0 +1,5 @@
+DUNMORE — STATUS LOG, ROUND 1
+District 1. Population 2,403.
+Water: normal. Power: stable. Medical: no unusual activity. Road access: open.
+Incidents: No significant incidents.
+Local coverage is intense and residents are demanding visible action.

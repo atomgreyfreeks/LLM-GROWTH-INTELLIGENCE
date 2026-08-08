@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real AI fleets ran three disasters: the live results</title>
+<link rel="icon" href="/favicon.svg">
+<style>
+  :root {
+    --ground: #0a0a0a;
+    --ink: #f2f2f2;
+    --secondary: #8a8a8a;
+    --hairline: #2a2a2a;
+  }
+
+  @media print {
+    :root {
+      --ground: #FFFFFF;
+      --ink: #111111;
+      --secondary: #666666;
+      --hairline: #DDDDDD;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .kicker {
+    margin: 0 0 24px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .standfirst {
+    margin: 24px 0 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--secondary);
+  }
+
+  p { margin: 1em 0 0; }
+  h2 + p { margin-top: 32px; }
+
+  .masthead { padding-top: 96px; }
+
+  section {
+    margin-top: 96px;
+    padding-top: 96px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .growths {
+    margin: 32px 0 0;
+    border: 1px solid var(--hairline);
+  }
+
+  .growths-title {
+    margin: 0;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  .gr {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 4px 20px;
+    margin: 0;
+    padding: 14px 16px;
+  }
+
+  .gr + .gr { border-top: 1px solid var(--hairline); }
+
+  .gr-name {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-top: 2px;
+  }
+
+  .gr-body { font-size: 15px; line-height: 1.5; }
+  .gr-rule { color: var(--secondary); }
+  .gr-impact { color: var(--ink); }
+
+  .closing { margin-top: 48px; }
+
+  footer {
+    margin-top: 96px;
+    padding: 24px 0 96px;
+    border-top: 1px solid var(--hairline);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--secondary);
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .page { padding: 0 20px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    .standfirst { font-size: 18px; }
+    .masthead { padding-top: 56px; }
+    section { margin-top: 56px; padding-top: 56px; }
+    footer { margin-top: 56px; padding-bottom: 56px; }
+    .gr { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <p class="kicker">The live runs, explained</p>
+    <h1>We gave three disasters to fleets of real AI agents, organized by growth rules from living networks.</h1>
+    <p class="standfirst">This whole project tests one idea: teams of AI agents
+    work better when the rules organizing them are copied from living networks
+    such as slime moulds, fungal networks, lichens, and root tips. The earlier
+    experiments used scripted stand-in agents. This page reports the live runs:
+    68 real Claude agents, three disaster scenarios, every prediction written
+    down and committed publicly before any agent ran, and every score computed
+    mechanically against a sealed answer key.</p>
+  </header>
+
+  <section>
+    <p class="kicker">How a live run works</p>
+    <h2>The growth rule is enforced by the machinery, and the agents do the judging.</h2>
+    <p>Each experiment builds a fixed simulated world: settlements, sensor
+    reports, storms, emergencies, all generated from a committed seed. The
+    fleet's growth rule — which reports merge, which sources get cited, which
+    crews may turn around — is enforced mechanically by the harness, exactly as
+    it was in the scripted versions. The real agents read the world's documents,
+    form judgments, and make the choices. The same world runs once per
+    organizing rule, and the rules are the only difference between runs.</p>
+    <p>Ten of our fourteen predictions for the scripted versions of these three
+    experiments had already failed, and the live runs continued the pattern:
+    three more predictions failed here, each in an instructive way, and the
+    failures are reported below next to the successes.</p>
+  </section>
+
+  <section>
+    <p class="kicker">The flooded coast</p>
+    <h2>Phone callers exaggerated a coastal flood, and the fleet forced to fly out and double-check reached a third fewer people.</h2>
+    <div class="growths">
+      <p class="growths-title">Growth systems in this run, and how each fared</p>
+      <p class="gr"><span class="gr-name">Bacterial swarm</span><span class="gr-body">
+        <span class="gr-rule">Satellite readings and phone calls merge into one
+        map before the dispatcher sees anything.</span>
+        <span class="gr-impact">Succeeded, 207 of a possible 207 people reached
+        in the lying season — because the agent doing the merging discounted
+        the lies on its own.</span></span></p>
+      <p class="gr"><span class="gr-name">Lichen</span><span class="gr-body">
+        <span class="gr-rule">The satellite and the phone log stay separate
+        witnesses all the way to the decision.</span>
+        <span class="gr-impact">Close behind, 188 of 207, losing 19 people to
+        two judgment slips.</span></span></p>
+      <p class="gr"><span class="gr-name">Root tip</span><span class="gr-body">
+        <span class="gr-rule">Whenever the two witnesses disagree strongly, the
+        first boat slot must be spent flying out to verify.</span>
+        <span class="gr-impact">Failed as predicted: 131 of 207, with every
+        verification flight spent on the same exaggerating settlement.</span></span></p>
+    </div>
+    <p>The world: twelve coastal settlements, six storm rounds, two boat slots
+    per round. The first three rounds were honest, and all three fleets made
+    identical, perfect picks. In the last three rounds, three settlements'
+    phone callers exaggerated their numbers several times over, and the
+    settlement that was truly worst went silent.</p>
+    <p>The prediction that keeping witnesses separate would win under lies
+    failed, and the reason matters. The merged-map fleet's fusion step was
+    itself a capable agent: it read the satellite's clear low readings at the
+    exaggerating settlements and cut their claims down before the dispatcher
+    ever saw a number. A merged map is only as dangerous as the merger is
+    mechanical. The prediction that mandatory double-checking would spend its
+    rescue capacity exactly when checking is least affordable held completely,
+    with a real agent holding the rule.</p>
+  </section>
+
+  <section>
+    <p class="kicker">The bridge office</p>
+    <h2>Half a bridge-inspection office was destroyed, and only the team that kept records of its discarded sources stayed perfect.</h2>
+    <div class="growths">
+      <p class="growths-title">Growth systems in this run, and how each fared</p>
+      <p class="gr"><span class="gr-name">Fungal network</span><span class="gr-body">
+        <span class="gr-rule">Each conclusion cites several neighboring sources
+        instead of one.</span>
+        <span class="gr-impact">Succeeded: 8 of 8 evidence trails answered
+        correctly after the damage.</span></span></p>
+      <p class="gr"><span class="gr-name">Coral</span><span class="gr-body">
+        <span class="gr-rule">Every discarded source leaves a small permanent
+        record of what was cut.</span>
+        <span class="gr-impact">The records are what made the perfect repair
+        possible.</span></span></p>
+      <p class="gr"><span class="gr-name">Slime mould</span><span class="gr-body">
+        <span class="gr-rule">Each conclusion keeps only its single strongest
+        source.</span>
+        <span class="gr-impact">Predicted to collapse to 3 of 8 after damage;
+        it survived at 7 of 8, because its writers smuggled source names into
+        their prose.</span></span></p>
+    </div>
+    <p>The world: a city monitors an aging bridge through sixteen sensor
+    reports. Four engineer agents summarize them into zone findings, a chief
+    agent writes the safety claims, and then two of the four findings are
+    deleted. A fresh auditor agent must then answer eight questions of the form
+    "which sensor report supports this statement?", with a capped number of
+    archive lookups.</p>
+    <p>Before the damage, both teams answered all eight questions. After the
+    damage, the record-keeping team stayed perfect, and the strongest-support
+    team missed exactly one. The predicted collapse never came, because real
+    summarizers preserve the trail in their sentences even when the citation
+    rule cuts it: one finding named three sensors in its prose despite citing
+    only one. The single question the strongest-support team lost was the one
+    fact its writer had left out of the prose too — when a fact fell out of
+    both the sentences and the citations, it was gone for good.</p>
+  </section>
+
+  <section>
+    <p class="kicker">The deadline region</p>
+    <h2>Five flash floods hit a sixteen-town region, every fleet reached all of them, and one agent legally outsmarted its own commitment rule.</h2>
+    <div class="growths">
+      <p class="growths-title">Growth systems in this run, and how each fared</p>
+      <p class="gr"><span class="gr-name">Tree trunk</span><span class="gr-body">
+        <span class="gr-rule">A crew's route may only be rewritten once it is
+        finished.</span>
+        <span class="gr-impact">Tied at 5 of 5 emergencies — its dispatcher
+        discovered that assigning one-stop routes keeps every decision fresh,
+        legally.</span></span></p>
+      <p class="gr"><span class="gr-name">Vascular</span><span class="gr-body">
+        <span class="gr-rule">A crew's current stop and next stop stay locked;
+        only the stop after that may change.</span>
+        <span class="gr-impact">Tied at 5 of 5 emergencies.</span></span></p>
+      <p class="gr"><span class="gr-name">Reroute</span><span class="gr-body">
+        <span class="gr-rule">Any crew may be turned around at any time, at the
+        cost of a lost round of walking.</span>
+        <span class="gr-impact">Tied at 5 of 5 emergencies, and it never paid a
+        single walking round — it rerouted futures, never the crew already
+        walking.</span></span></p>
+    </div>
+    <p>The world: sixteen towns, four walking crews, six rounds, and a
+    briefing that is always one round out of date. Five flash floods appeared
+    on a fixed schedule, each with a hard deadline three rounds out. All three
+    fleets served all five emergencies and all 1,487 people inside their
+    windows, so the prediction that locked and committed fleets would miss
+    emergencies failed.</p>
+    <p>Two things from the transcripts are worth more than the tie. First, in
+    round two, before anything unusual happened, the finish-the-route
+    dispatcher chose to assign only one stop and wrote down why: a one-stop
+    route ends every round, so the office gets a fresh decision every round.
+    The rule restricted rewriting plans, so the agent stopped making long
+    plans. Second, one honest flaw is on the record: our checker for the
+    finish-the-route arm wrongly rejected some multi-stop assignments, which
+    pushed that fleet further toward short routes than its own strategy
+    already had. The full account is in the results file.</p>
+  </section>
+
+  <section>
+    <p class="kicker">What the three runs teach together</p>
+    <h2>Growth rules decide the outcome when the budget binds, and capable agents rescue any structure when it does not.</h2>
+    <p>One pattern runs through all three scenarios. Wherever the organizing
+    rule truly bound — the mandatory verification flights that could not be
+    skipped — the scripted version's failure replicated exactly with real
+    agents, and the fleet lost a third of the people it could have reached.
+    Wherever the rule left any slack, a capable agent found the escape: the
+    fusion agent judged instead of averaging, the summarizers carried their
+    sources in prose, the committed dispatcher shortened its commitments, and
+    the rerouting dispatcher never paid for a turn.</p>
+    <p>This is the same law the earlier 99-agent fleet runs found from the
+    other direction: at a generous reading budget the fleet organizations tied,
+    and at a tight budget the reinforcement fleet went blind while rotation and
+    fungal coverage survived. The choice of growth system matters most exactly
+    when capacity is scarce — which is precisely when the stakes are highest,
+    and precisely the condition the next round of experiments will bind
+    harder.</p>
+    <p class="closing">Everything above is reproducible. The worlds, the answer
+    keys, and the predictions were committed before any agent ran; the run
+    logs and mechanical scorecards sit next to the results files in the
+    repository's documentation folders; and the predictions that failed are
+    published beside the ones that held.</p>
+  </section>
+
+  <footer>AURAWORLD &middot; 68 real Claude agents across three live runs
+  &middot; every score computed mechanically against a sealed answer key
+  &middot; 2026</footer>
+
+</div>
+<script src="/nav.js" defer></script>
+</body>
+</html>

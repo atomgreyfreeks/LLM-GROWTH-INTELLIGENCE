@@ -1,0 +1,301 @@
+{
+  "seed": 7,
+  "communities": [
+    {
+      "name": "Ashfield",
+      "district": 1,
+      "pop": 2307,
+      "need": [
+        8.9,
+        9.5,
+        9.3
+      ],
+      "loud": false
+    },
+    {
+      "name": "Barrow Cross",
+      "district": 1,
+      "pop": 735,
+      "need": [
+        0.9,
+        0.9,
+        9.5
+      ],
+      "loud": false
+    },
+    {
+      "name": "Cinder Row",
+      "district": 1,
+      "pop": 1256,
+      "need": [
+        3.9,
+        3.5,
+        3.9
+      ],
+      "loud": false
+    },
+    {
+      "name": "Dunmore",
+      "district": 1,
+      "pop": 2403,
+      "need": [
+        1.8,
+        2.5,
+        2.8
+      ],
+      "loud": true
+    },
+    {
+      "name": "Eastholt",
+      "district": 2,
+      "pop": 555,
+      "need": [
+        7.2,
+        7.6,
+        8.4
+      ],
+      "loud": false
+    },
+    {
+      "name": "Fernway",
+      "district": 2,
+      "pop": 1747,
+      "need": [
+        1.2,
+        1.1,
+        9.6
+      ],
+      "loud": false
+    },
+    {
+      "name": "Gorse Hill",
+      "district": 2,
+      "pop": 1412,
+      "need": [
+        0.7,
+        1.4,
+        1.3
+      ],
+      "loud": false
+    },
+    {
+      "name": "Harrow Bend",
+      "district": 2,
+      "pop": 1759,
+      "need": [
+        3,
+        3.7,
+        4.4
+      ],
+      "loud": false
+    },
+    {
+      "name": "Ivy Hollow",
+      "district": 3,
+      "pop": 2542,
+      "need": [
+        0.7,
+        1.1,
+        1.4
+      ],
+      "loud": false
+    },
+    {
+      "name": "Junction Vale",
+      "district": 3,
+      "pop": 2343,
+      "need": [
+        8.2,
+        8.7,
+        9.4
+      ],
+      "loud": false
+    },
+    {
+      "name": "Kiln Flats",
+      "district": 3,
+      "pop": 2464,
+      "need": [
+        1.3,
+        1.4,
+        1.7
+      ],
+      "loud": false
+    },
+    {
+      "name": "Larkmoor",
+      "district": 3,
+      "pop": 564,
+      "need": [
+        1.7,
+        1.6,
+        1.3
+      ],
+      "loud": true
+    },
+    {
+      "name": "Millstead",
+      "district": 4,
+      "pop": 378,
+      "need": [
+        6.7,
+        7,
+        7.3
+      ],
+      "loud": true
+    },
+    {
+      "name": "Northgate",
+      "district": 4,
+      "pop": 1937,
+      "need": [
+        3.3,
+        3.2,
+        2.8
+      ],
+      "loud": true
+    },
+    {
+      "name": "Oxbow",
+      "district": 4,
+      "pop": 1543,
+      "need": [
+        1.3,
+        1.7,
+        2.3
+      ],
+      "loud": false
+    },
+    {
+      "name": "Pinemarch",
+      "district": 4,
+      "pop": 1767,
+      "need": [
+        4.8,
+        4.7,
+        5.3
+      ],
+      "loud": false
+    },
+    {
+      "name": "Quarry Edge",
+      "district": 5,
+      "pop": 614,
+      "need": [
+        5.9,
+        5.6,
+        5.3
+      ],
+      "loud": false
+    },
+    {
+      "name": "Rushwater",
+      "district": 5,
+      "pop": 517,
+      "need": [
+        2.8,
+        3.5,
+        3.8
+      ],
+      "loud": false
+    },
+    {
+      "name": "Saltern",
+      "district": 5,
+      "pop": 1348,
+      "need": [
+        2.2,
+        2.7,
+        2.9
+      ],
+      "loud": false
+    },
+    {
+      "name": "Thistledown",
+      "district": 5,
+      "pop": 1471,
+      "need": [
+        4.3,
+        5.1,
+        4.9
+      ],
+      "loud": false
+    },
+    {
+      "name": "Umberfield",
+      "district": 6,
+      "pop": 2515,
+      "need": [
+        3.5,
+        3.3,
+        3.4
+      ],
+      "loud": false
+    },
+    {
+      "name": "Vetch Green",
+      "district": 6,
+      "pop": 905,
+      "need": [
+        2.1,
+        2,
+        1.9
+      ],
+      "loud": true
+    },
+    {
+      "name": "Wrenfall",
+      "district": 6,
+      "pop": 1209,
+      "need": [
+        2.3,
+        2.3,
+        2.8
+      ],
+      "loud": true
+    },
+    {
+      "name": "Yarrow Point",
+      "district": 6,
+      "pop": 1046,
+      "need": [
+        5.3,
+        5.2,
+        5.5
+      ],
+      "loud": true
+    }
+  ],
+  "emergencies": [
+    {
+      "name": "Barrow Cross",
+      "district": 1,
+      "eruptsRound": 3
+    },
+    {
+      "name": "Fernway",
+      "district": 2,
+      "eruptsRound": 3
+    }
+  ],
+  "trueTop4": [
+    [
+      "Ashfield",
+      "Junction Vale",
+      "Eastholt",
+      "Millstead"
+    ],
+    [
+      "Ashfield",
+      "Junction Vale",
+      "Eastholt",
+      "Millstead"
+    ],
+    [
+      "Fernway",
+      "Barrow Cross",
+      "Junction Vale",
+      "Ashfield"
+    ]
+  ]
+}

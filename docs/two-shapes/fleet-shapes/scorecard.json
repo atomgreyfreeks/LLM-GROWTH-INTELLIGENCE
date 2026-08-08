@@ -1,0 +1,155 @@
+{
+  "vascular": [
+    {
+      "round": 1,
+      "distinct_read": 18,
+      "hits": 4,
+      "aid": [
+        "Ashfield",
+        "Eastholt",
+        "Junction Vale",
+        "Millstead"
+      ],
+      "em": {
+        "Barrow Cross": "read",
+        "Fernway": "read"
+      },
+      "flags": []
+    },
+    {
+      "round": 2,
+      "distinct_read": 12,
+      "hits": 3,
+      "aid": [
+        "Ashfield",
+        "Junction Vale",
+        "Millstead",
+        "Yarrow Point"
+      ],
+      "em": {
+        "Barrow Cross": "-",
+        "Fernway": "-"
+      },
+      "flags": []
+    },
+    {
+      "round": 3,
+      "distinct_read": 18,
+      "hits": 3,
+      "aid": [
+        "Millstead",
+        "Junction Vale",
+        "Fernway",
+        "Ashfield"
+      ],
+      "em": {
+        "Barrow Cross": "URGENT",
+        "Fernway": "AID"
+      },
+      "flags": []
+    }
+  ],
+  "physarum": [
+    {
+      "round": 1,
+      "distinct_read": 18,
+      "hits": 3,
+      "aid": [
+        "Ashfield",
+        "Eastholt",
+        "Junction Vale",
+        "Quarry Edge"
+      ],
+      "em": {
+        "Barrow Cross": "read",
+        "Fernway": "read"
+      },
+      "flags": []
+    },
+    {
+      "round": 2,
+      "distinct_read": 12,
+      "hits": 4,
+      "aid": [
+        "Junction Vale",
+        "Ashfield",
+        "Eastholt",
+        "Millstead"
+      ],
+      "em": {
+        "Barrow Cross": "WATCH",
+        "Fernway": "read"
+      },
+      "flags": []
+    },
+    {
+      "round": 3,
+      "distinct_read": 18,
+      "hits": 3,
+      "aid": [
+        "Fernway",
+        "Millstead",
+        "Junction Vale",
+        "Ashfield"
+      ],
+      "em": {
+        "Barrow Cross": "WATCH",
+        "Fernway": "AID"
+      },
+      "flags": [
+        "Barrow Cross",
+        "Fernway"
+      ]
+    }
+  ],
+  "mycelium": [
+    {
+      "round": 1,
+      "distinct_read": 18,
+      "hits": 4,
+      "aid": [
+        "Ashfield",
+        "Eastholt",
+        "Junction Vale",
+        "Millstead"
+      ],
+      "em": {
+        "Barrow Cross": "read",
+        "Fernway": "read"
+      },
+      "flags": []
+    },
+    {
+      "round": 2,
+      "distinct_read": 12,
+      "hits": 3,
+      "aid": [
+        "Ashfield",
+        "Junction Vale",
+        "Millstead",
+        "Yarrow Point"
+      ],
+      "em": {
+        "Barrow Cross": "-",
+        "Fernway": "-"
+      },
+      "flags": []
+    },
+    {
+      "round": 3,
+      "distinct_read": 18,
+      "hits": 3,
+      "aid": [
+        "Junction Vale",
+        "Millstead",
+        "Ashfield",
+        "Fernway"
+      ],
+      "em": {
+        "Barrow Cross": "WATCH",
+        "Fernway": "AID"
+      },
+      "flags": []
+    }
+  ]
+}

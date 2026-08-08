@@ -1,0 +1,140 @@
+{
+  "trunk": {
+    "emergenciesServed": 5,
+    "of": 5,
+    "peopleServed": 1487,
+    "totalServes": 24,
+    "idleOrWalkCrewRounds": 0,
+    "illegalEdits": 34,
+    "retriedRounds": 3,
+    "detail": [
+      {
+        "id": "E1",
+        "town": "Kestrel Down",
+        "window": "2-5",
+        "people": 379,
+        "servedRound": 3
+      },
+      {
+        "id": "E2",
+        "town": "Cotholt",
+        "window": "2-5",
+        "people": 143,
+        "servedRound": 3
+      },
+      {
+        "id": "E3",
+        "town": "Dampier Cross",
+        "window": "3-6",
+        "people": 297,
+        "servedRound": 4
+      },
+      {
+        "id": "E4",
+        "town": "Hollowmere",
+        "window": "3-6",
+        "people": 368,
+        "servedRound": 4
+      },
+      {
+        "id": "E5",
+        "town": "Aldergate",
+        "window": "4-7",
+        "people": 300,
+        "servedRound": 5
+      }
+    ]
+  },
+  "vascular": {
+    "emergenciesServed": 5,
+    "of": 5,
+    "peopleServed": 1487,
+    "totalServes": 24,
+    "idleOrWalkCrewRounds": 0,
+    "illegalEdits": 1,
+    "retriedRounds": 1,
+    "detail": [
+      {
+        "id": "E1",
+        "town": "Kestrel Down",
+        "window": "2-5",
+        "people": 379,
+        "servedRound": 3
+      },
+      {
+        "id": "E2",
+        "town": "Cotholt",
+        "window": "2-5",
+        "people": 143,
+        "servedRound": 3
+      },
+      {
+        "id": "E3",
+        "town": "Dampier Cross",
+        "window": "3-6",
+        "people": 297,
+        "servedRound": 4
+      },
+      {
+        "id": "E4",
+        "town": "Hollowmere",
+        "window": "3-6",
+        "people": 368,
+        "servedRound": 5
+      },
+      {
+        "id": "E5",
+        "town": "Aldergate",
+        "window": "4-7",
+        "people": 300,
+        "servedRound": 5
+      }
+    ]
+  },
+  "reroute": {
+    "emergenciesServed": 5,
+    "of": 5,
+    "peopleServed": 1487,
+    "totalServes": 24,
+    "idleOrWalkCrewRounds": 0,
+    "illegalEdits": 0,
+    "retriedRounds": 0,
+    "detail": [
+      {
+        "id": "E1",
+        "town": "Kestrel Down",
+        "window": "2-5",
+        "people": 379,
+        "servedRound": 3
+      },
+      {
+        "id": "E2",
+        "town": "Cotholt",
+        "window": "2-5",
+        "people": 143,
+        "servedRound": 2
+      },
+      {
+        "id": "E3",
+        "town": "Dampier Cross",
+        "window": "3-6",
+        "people": 297,
+        "servedRound": 4
+      },
+      {
+        "id": "E4",
+        "town": "Hollowmere",
+        "window": "3-6",
+        "people": 368,
+        "servedRound": 3
+      },
+      {
+        "id": "E5",
+        "town": "Aldergate",
+        "window": "4-7",
+        "people": 300,
+        "servedRound": 5
+      }
+    ]
+  }
+}

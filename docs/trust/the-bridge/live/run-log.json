@@ -1,0 +1,264 @@
+{
+  "arms": [
+    {
+      "arm": "slime",
+      "rejections": 0,
+      "findings": [
+        {
+          "zone": "north anchorage",
+          "sources": [
+            "S01"
+          ],
+          "dropped": [],
+          "quotes": [
+            "The primary hold-down bolts show a preload loss of 11.0 percent against the commissioning record.",
+            "The reading was cross-checked against the adjacent unit and agreed within tolerance.",
+            "Sensor battery and telemetry checks passed with no dropouts."
+          ],
+          "finding": "The north anchorage's primary hold-down bolts have lost 11.0 percent of their preload since the commissioning record was set. The reading was cross-checked against the adjacent sensor unit, and the two values agreed within tolerance. Battery and telemetry checks on the sensor passed with no dropouts this cycle, so the sensing chain is not in question. A preload loss of this size at a hold-down bolt connection reduces clamping force at a load-bearing joint and normally calls for a torque check and re-tensioning inspection. This bolt-preload reading is the strongest-supported finding for the north anchorage this cycle, drawn from sensor report S01 alone."
+        },
+        {
+          "zone": "south anchorage",
+          "sources": [
+            "S07"
+          ],
+          "dropped": [],
+          "quotes": [
+            "The reading was cross-checked against the adjacent unit and agreed within tolerance.",
+            "Wire-break acoustic events in the south cable band totalled 5 this quarter, up from zero the previous quarter.",
+            "No maintenance activity was logged near the instrument this cycle."
+          ],
+          "finding": "The south anchorage zone shows one escalating concern and several stable-to-positive readings this cycle. Wire-break acoustic events in the south cable band totalled 5 this quarter, up from zero the previous quarter, and the reading was cross-checked against the adjacent unit and confirmed within tolerance. The south tower tilt has held steady at 0.11 degrees for six cycles, showing no movement trend. A dehumidification fan in the south chamber has failed, and humidity in that chamber has climbed to 76 percent. Grout injection at the south anchorage tendons was completed and verified this cycle, closing out a planned maintenance item. Traffic volumes varied across cycles from light to heavy with no lane closures reported. No maintenance activity was logged near the wire-break or grout instruments this cycle. The wire-break increase is the most significant reading for the zone and needs closer monitoring next cycle."
+        },
+        {
+          "zone": "east span",
+          "sources": [
+            "S09"
+          ],
+          "dropped": [],
+          "quotes": [
+            "The east midspan vertical deflection under the calibration truck ran 6.8 percent above the design envelope.",
+            "Ambient temperature during the reading window averaged 12.2 degrees.",
+            "Sensor battery and telemetry checks passed with no dropouts."
+          ],
+          "finding": "East span sensors this cycle show one structural reading outside its design envelope, alongside several other readings near or past normal thresholds. At sensor S09, the east midspan vertical deflection under the calibration truck ran 6.8 percent above the design envelope, recorded with ambient temperature at 12.2 degrees and sensor battery and telemetry checks passing with no dropouts. At sensor S10, an expansion joint at the east abutment is closing 3.3 millimetres short of its free-movement range. At sensor S11, deck accelerations in the east span crossed the comfort threshold twice during weekday peak traffic. At sensor S12, a bearing at pier E2 recorded a temperature spike of 12.1 degrees above ambient during afternoon load. No maintenance activity was logged at S09 or S11 this cycle. The S09 deflection exceedance is the strongest structural signal in the zone this cycle and merits follow-up."
+        },
+        {
+          "zone": "west span",
+          "sources": [
+            "S15"
+          ],
+          "dropped": [],
+          "quotes": [
+            "The west parapet anchor pull-test held at 100 percent of specification.",
+            "The reading was cross-checked against the adjacent unit and agreed within tolerance.",
+            "Sensor battery and telemetry checks passed with no dropouts."
+          ],
+          "finding": "The west span zone is structurally sound this cycle, with its key finding independently confirmed. The west parapet anchor pull-test held at 100 percent of specification, meaning the anchor's holding capacity met the full design requirement. That reading was cross-checked against the adjacent unit and agreed within tolerance, so the result is not a single-sensor anomaly. Traffic during the window was moderate with no lane closures, so the test occurred under normal operating load. Sensor battery and telemetry checks passed with no dropouts, so the instrument feed behind these readings is reliable. No out-of-tolerance or anomalous readings were reported for the zone this cycle. Overall, the west span's parapet anchor condition is confirmed sound by a cross-validated pull-test, not a single unverified reading."
+        }
+      ],
+      "chief": {
+        "claims": [
+          {
+            "text": "At the north anchorage, sensor S01 recorded an 11.0 percent preload loss on the primary hold-down bolts since the commissioning record was set, a reading the zone report identifies as its strongest-supported finding because it reduces clamping force at a load-bearing joint and normally calls for a torque check and re-tensioning inspection.",
+            "sources": [
+              "north anchorage"
+            ],
+            "quotes": [
+              "The north anchorage's primary hold-down bolts have lost 11.0 percent of their preload since the commissioning record was set.",
+              "A preload loss of this size at a hold-down bolt connection reduces clamping force at a load-bearing joint and normally calls for a torque check and re-tensioning inspection.",
+              "This bolt-preload reading is the strongest-supported finding for the north anchorage this cycle, drawn from sensor report S01 alone."
+            ],
+            "dropped": []
+          },
+          {
+            "text": "At the east span, sensor S09 recorded midspan vertical deflection under the calibration truck running 6.8 percent above the design envelope, the only reading in the zone outside its design envelope and the report's strongest structural signal for the east span this cycle.",
+            "sources": [
+              "east span"
+            ],
+            "quotes": [
+              "East span sensors this cycle show one structural reading outside its design envelope, alongside several other readings near or past normal thresholds.",
+              "At sensor S09, the east midspan vertical deflection under the calibration truck ran 6.8 percent above the design envelope, recorded with ambient temperature at 12.2 degrees and sensor battery and telemetry checks passing with no dropouts.",
+              "The S09 deflection exceedance is the strongest structural signal in the zone this cycle and merits follow-up."
+            ],
+            "dropped": []
+          }
+        ],
+        "verdict": "The bridge has two zones with a confirmed, sensor-verified reading past a structural safety margin this cycle — the north anchorage's bolt preload loss and the east span's design-envelope deflection exceedance — and both need a follow-up engineering inspection before the next monitoring cycle."
+      },
+      "control": {
+        "pulls": [
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S08",
+          "S13",
+          "S14",
+          "S16"
+        ],
+        "answers": {
+          "Q1": "S01",
+          "Q2": "S03",
+          "Q3": "S06",
+          "Q4": "S07",
+          "Q5": "S09",
+          "Q6": "S12",
+          "Q7": "S14",
+          "Q8": "S15"
+        }
+      },
+      "damage": {
+        "pulls": [
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "answers": {
+          "Q1": "S01",
+          "Q2": "S03",
+          "Q3": "S06",
+          "Q4": "S07",
+          "Q5": "S09",
+          "Q6": "S12",
+          "Q7": "S08",
+          "Q8": "S15"
+        }
+      }
+    },
+    {
+      "arm": "fungal",
+      "rejections": 0,
+      "findings": [
+        {
+          "zone": "north anchorage",
+          "sources": [
+            "S01",
+            "S03",
+            "S04"
+          ],
+          "dropped": [
+            "S02"
+          ],
+          "quotes": [],
+          "finding": "The north anchorage zone shows two independent structural readings with a matching 11.0 percent loss against commissioning values: the primary hold-down bolts have lost 11.0 percent of preload, and the upstream stay cable tension has dropped 11.0 percent. Fresh corrosion staining has also appeared on the splay saddle since the last inspection cycle, and no maintenance activity was logged near that instrument this cycle to explain the staining. Humidity and dew point stayed within the instrument's rated range, and the bolt reading was cross-checked against an adjacent unit and agreed within tolerance, so instrument drift and moisture do not explain the losses. The matching 11.0 percent loss on two separate structural measurements, combined with new corrosion at the saddle, points to a real and developing loss of tension and clamping force in this zone."
+        },
+        {
+          "zone": "south anchorage",
+          "sources": [
+            "S06",
+            "S07",
+            "S08"
+          ],
+          "dropped": [
+            "S05"
+          ],
+          "quotes": [],
+          "finding": "South anchorage zone combines an active equipment failure, a worsening cable trend, and a completed repair. A dehumidification fan in the south chamber failed, and relative humidity in that chamber rose to 76 percent. Wire-break acoustic events in the south cable band totaled 5 this quarter, up from zero the previous quarter, indicating new cable degradation. Grout injection at the south anchorage tendons was completed and verified this cycle, addressing corrosion protection at the tendon anchor points. Rising humidity from the failed fan raises corrosion risk to the same tendons the grout work just protected and to the cables showing new wire breaks. No maintenance activity was logged against the humidity or wire-break readings this cycle, so both remain open. Priority action: repair or replace the south chamber dehumidification fan before the next cycle to limit corrosion exposure. The wire-break trend should be tracked against next quarter's count to confirm whether degradation is accelerating."
+        },
+        {
+          "zone": "east span",
+          "sources": [
+            "S09",
+            "S10",
+            "S12"
+          ],
+          "dropped": [
+            "S11"
+          ],
+          "quotes": [],
+          "finding": "The east span zone has three readings that call for attention this cycle: elevated deflection, restricted expansion-joint movement, and an elevated bearing temperature. Midspan vertical deflection under the calibration truck load ran 6.8 percent above the design envelope (S09). The expansion joint at the east abutment is closing 3.3 millimetres short of its free-movement range (S10). The bearing at pier E2 recorded a temperature spike of 12.1 degrees above ambient during afternoon load (S12). The S09 sensor passed its battery and telemetry checks with no dropouts, and the S12 reading was cross-checked against the adjacent unit and agreed within tolerance, so neither reading looks like an instrument fault. A joint that cannot close through its full range and a bearing running hot on the same span can share one cause: the bearing is not moving freely under thermal load. That link, together with the above-envelope deflection, points toward a mechanical restraint problem rather than three unrelated readings. I recommend a physical inspection of the pier E2 bearing and the east abutment joint before the next high-load cycle."
+        },
+        {
+          "zone": "west span",
+          "sources": [
+            "S14",
+            "S15",
+            "S13"
+          ],
+          "dropped": [
+            "S16"
+          ],
+          "quotes": [],
+          "finding": "The west span zone is structurally stable this cycle, with one drainage item flagged for maintenance follow-up. Two deck drainage scuppers remain blocked and are ponding water at the kerb line, and no maintenance activity has been logged near the instrument to clear them (S14). Structural checks elsewhere read normal: the west parapet anchor pull-test held at 100 percent of specification, cross-checked against the adjacent unit and within tolerance (S15). West span strain gauges returned to baseline within 2.3 minutes after a calibration truck passed, and the sensor network reported no dropouts (S13). Traffic across the reporting windows ranged from light to heavy with no lane closures at any point. All sensor battery and telemetry checks passed. The one open item for this zone is the blocked scuppers, which should be routed to maintenance before the next storm. No anomalies were found in structural strain, anchor integrity, or traffic conditions."
+        }
+      ],
+      "chief": {
+        "claims": [
+          {
+            "text": "The north anchorage and the south anchorage are both showing a developing loss of structural integrity. At the north anchorage, preload and cable tension have each dropped 11.0 percent, and new corrosion staining has appeared with no logged cause. At the south anchorage, a failed fan let humidity in the chamber rise to 76 percent, and wire-break events in the cable band rose from zero to 5 this quarter.",
+            "sources": [
+              "north anchorage",
+              "south anchorage"
+            ],
+            "quotes": [],
+            "dropped": [
+              "east span",
+              "west span"
+            ]
+          },
+          {
+            "text": "The east span may have a problem with mechanical restraint. The bearing at pier E2 is running 12.1 degrees above ambient temperature, the expansion joint at the east abutment is closing 3.3 millimetres short of its free-movement range, and midspan deflection under load is 6.8 percent above the design envelope. A physical inspection of the bearing and the joint is recommended before the next high-load cycle.",
+            "sources": [
+              "east span"
+            ],
+            "quotes": [],
+            "dropped": [
+              "north anchorage",
+              "south anchorage",
+              "west span"
+            ]
+          }
+        ],
+        "verdict": "The bridge is safe for current traffic, but both anchorages need repairs for corrosion and tension loss, and the bearing and joint on the east span need inspection before the next high-load cycle."
+      },
+      "control": {
+        "pulls": [
+          "S01",
+          "S03",
+          "S04",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "answers": {
+          "Q1": "S01",
+          "Q2": "S03",
+          "Q3": "S06",
+          "Q4": "S07",
+          "Q5": "S09",
+          "Q6": "S12",
+          "Q7": "S14",
+          "Q8": "S15"
+        }
+      },
+      "damage": {
+        "pulls": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "answers": {
+          "Q1": "S01",
+          "Q2": "S03",
+          "Q3": "S06",
+          "Q4": "S07",
+          "Q5": "S09",
+          "Q6": "S12",
+          "Q7": "S14",
+          "Q8": "S15"
+        }
+      }
+    }
+  ]
+}

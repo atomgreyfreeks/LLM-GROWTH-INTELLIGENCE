@@ -1,0 +1,234 @@
+{
+  "slime": {
+    "rejections": 0,
+    "phases": {
+      "control": {
+        "correct": 8,
+        "of": 8,
+        "per": {
+          "Q1": {
+            "got": "S01",
+            "want": "S01",
+            "ok": true
+          },
+          "Q2": {
+            "got": "S03",
+            "want": "S03",
+            "ok": true
+          },
+          "Q3": {
+            "got": "S06",
+            "want": "S06",
+            "ok": true
+          },
+          "Q4": {
+            "got": "S07",
+            "want": "S07",
+            "ok": true
+          },
+          "Q5": {
+            "got": "S09",
+            "want": "S09",
+            "ok": true
+          },
+          "Q6": {
+            "got": "S12",
+            "want": "S12",
+            "ok": true
+          },
+          "Q7": {
+            "got": "S14",
+            "want": "S14",
+            "ok": true
+          },
+          "Q8": {
+            "got": "S15",
+            "want": "S15",
+            "ok": true
+          }
+        },
+        "pulls": [
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S08",
+          "S13",
+          "S14",
+          "S16"
+        ]
+      },
+      "damage": {
+        "correct": 7,
+        "of": 8,
+        "per": {
+          "Q1": {
+            "got": "S01",
+            "want": "S01",
+            "ok": true
+          },
+          "Q2": {
+            "got": "S03",
+            "want": "S03",
+            "ok": true
+          },
+          "Q3": {
+            "got": "S06",
+            "want": "S06",
+            "ok": true
+          },
+          "Q4": {
+            "got": "S07",
+            "want": "S07",
+            "ok": true
+          },
+          "Q5": {
+            "got": "S09",
+            "want": "S09",
+            "ok": true
+          },
+          "Q6": {
+            "got": "S12",
+            "want": "S12",
+            "ok": true
+          },
+          "Q7": {
+            "got": "S08",
+            "want": "S14",
+            "ok": false
+          },
+          "Q8": {
+            "got": "S15",
+            "want": "S15",
+            "ok": true
+          }
+        },
+        "pulls": [
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S10",
+          "S11",
+          "S12"
+        ]
+      }
+    }
+  },
+  "fungal": {
+    "rejections": 0,
+    "phases": {
+      "control": {
+        "correct": 8,
+        "of": 8,
+        "per": {
+          "Q1": {
+            "got": "S01",
+            "want": "S01",
+            "ok": true
+          },
+          "Q2": {
+            "got": "S03",
+            "want": "S03",
+            "ok": true
+          },
+          "Q3": {
+            "got": "S06",
+            "want": "S06",
+            "ok": true
+          },
+          "Q4": {
+            "got": "S07",
+            "want": "S07",
+            "ok": true
+          },
+          "Q5": {
+            "got": "S09",
+            "want": "S09",
+            "ok": true
+          },
+          "Q6": {
+            "got": "S12",
+            "want": "S12",
+            "ok": true
+          },
+          "Q7": {
+            "got": "S14",
+            "want": "S14",
+            "ok": true
+          },
+          "Q8": {
+            "got": "S15",
+            "want": "S15",
+            "ok": true
+          }
+        },
+        "pulls": [
+          "S01",
+          "S03",
+          "S04",
+          "S06",
+          "S07",
+          "S08"
+        ]
+      },
+      "damage": {
+        "correct": 8,
+        "of": 8,
+        "per": {
+          "Q1": {
+            "got": "S01",
+            "want": "S01",
+            "ok": true
+          },
+          "Q2": {
+            "got": "S03",
+            "want": "S03",
+            "ok": true
+          },
+          "Q3": {
+            "got": "S06",
+            "want": "S06",
+            "ok": true
+          },
+          "Q4": {
+            "got": "S07",
+            "want": "S07",
+            "ok": true
+          },
+          "Q5": {
+            "got": "S09",
+            "want": "S09",
+            "ok": true
+          },
+          "Q6": {
+            "got": "S12",
+            "want": "S12",
+            "ok": true
+          },
+          "Q7": {
+            "got": "S14",
+            "want": "S14",
+            "ok": true
+          },
+          "Q8": {
+            "got": "S15",
+            "want": "S15",
+            "ok": true
+          }
+        },
+        "pulls": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ]
+      }
+    }
+  }
+}

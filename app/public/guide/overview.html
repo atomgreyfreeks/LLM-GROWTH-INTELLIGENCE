@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The overview: what we found, and why we are entering</title>
+<link rel="icon" href="/favicon.svg">
+<style>
+  :root {
+    --ground: #0a0a0a;
+    --ink: #f2f2f2;
+    --secondary: #8a8a8a;
+    --hairline: #2a2a2a;
+  }
+
+  @media print {
+    :root {
+      --ground: #FFFFFF;
+      --ink: #111111;
+      --secondary: #666666;
+      --hairline: #DDDDDD;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .kicker {
+    margin: 0 0 24px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .standfirst {
+    margin: 24px 0 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--secondary);
+  }
+
+  p { margin: 1em 0 0; }
+  h2 + p { margin-top: 32px; }
+
+  .masthead { padding-top: 96px; }
+
+  section {
+    margin-top: 96px;
+    padding-top: 96px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .growths {
+    margin: 32px 0 0;
+    border: 1px solid var(--hairline);
+  }
+
+  .growths-title {
+    margin: 0;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+  }
+
+  .gr {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 4px 20px;
+    margin: 0;
+    padding: 14px 16px;
+  }
+
+  .gr + .gr { border-top: 1px solid var(--hairline); }
+
+  .gr-name {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-top: 2px;
+  }
+
+  .gr-body { font-size: 15px; line-height: 1.5; }
+
+  figure { margin: 48px 0 0; }
+
+  figure img {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--hairline);
+  }
+
+  figcaption {
+    max-width: 560px;
+    margin: 24px auto 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--secondary);
+    text-align: center;
+  }
+  .gr-rule { color: var(--secondary); }
+  .gr-impact { color: var(--ink); }
+
+  .closing { margin-top: 48px; }
+
+  footer {
+    margin-top: 96px;
+    padding: 24px 0 96px;
+    border-top: 1px solid var(--hairline);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--secondary);
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .page { padding: 0 20px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    .standfirst { font-size: 18px; }
+    .masthead { padding-top: 56px; }
+    section { margin-top: 56px; padding-top: 56px; }
+    footer { margin-top: 56px; padding-bottom: 56px; }
+    .gr { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <p class="kicker">The overview</p>
+    <h1>Floods, storms, and a failing bridge: we build simulated disasters and hand the rescue work to teams of AI agents. Each team is organized the way a living thing grows — a slime mould, a fungal network, a lichen — and that growth rule decided who got seen, proven safe, and saved.</h1>
+    <p class="standfirst">The whole project tests one idea: teams of AI agents
+    work better when they are organized by growth rules copied from living
+    networks. This page is that idea in plain words: what we found, why we
+    believe it, and why we are asking for the hackathon's computers to test it
+    at a much larger scale. Everything here comes from experiments whose
+    predictions were saved publicly before they ran, and whose scores were
+    counted by scripts rather than by anyone's opinion.</p>
+  </header>
+
+  <section>
+    <p class="kicker">The finding</p>
+    <h2>One family of rules kept winning, and it has never lost.</h2>
+    <p>The fungal-network way of organizing a team works like this: spread
+    your connections across neighbors, merge reports instead of ranking them
+    against each other, pass sideways tips, and keep a small record of
+    anything you throw away. That way of organizing has won or tied every
+    experiment we have run, in the simulations and with real AI agents. Its
+    cost was zero or nearly zero every time. A rule with measurable upside
+    under stress and no measured downside is worth adopting, and that is the
+    practical definition of a benefit. Here is each finding in its full
+    setting.</p>
+    <div class="growths">
+      <p class="growths-title">The findings, each in its full setting</p>
+      <p class="gr"><span class="gr-name">Fungal network</span><span class="gr-body">
+        <span class="gr-rule">A flood hit 64 communities, and their survey
+        reports had to squeeze through four rounds of summarizing on the way
+        to the office sending help.</span>
+        <span class="gr-impact">The fungal merging rule kept every community
+        visible to that office. The standard crowding rule had erased 26 of
+        them while survey teams were still visiting daily.</span></span></p>
+      <p class="gr"><span class="gr-name">Fungal network</span><span class="gr-body">
+        <span class="gr-rule">Six real AI surveyors covered a 24-town disaster
+        with only half the region readable each round.</span>
+        <span class="gr-impact">The fleet organized with fungal coverage and
+        sideways tips aided both erupting emergencies before they erupted.
+        The fleet feeding attention to recent results never read one of them
+        for three straight rounds.</span></span></p>
+      <p class="gr"><span class="gr-name">Coral</span><span class="gr-body">
+        <span class="gr-rule">Half of a bridge-inspection office's paperwork
+        was destroyed, and a fresh auditor had to prove each safety statement
+        from a surviving sensor reading.</span>
+        <span class="gr-impact">The team that kept a record of every discarded
+        source proved all eight statements afterward. The record was the
+        entire difference on the one statement the other team lost.</span></span></p>
+      <p class="gr"><span class="gr-name">Root tip</span><span class="gr-body">
+        <span class="gr-rule">A storm flooded a coast while phone callers
+        exaggerated, and one rescue team's rule forced a verification flight
+        at every strong disagreement.</span>
+        <span class="gr-impact">That team reached 131 people of a possible
+        207, spending every flight on the same liar — the failure our
+        simulation predicted, now confirmed with real agents.</span></span></p>
+      <p class="gr"><span class="gr-name">Slime mould</span><span class="gr-body">
+        <span class="gr-rule">The same 24-town disaster, with the fleet
+        feeding its attention to whatever recently produced results.</span>
+        <span class="gr-impact">At a tight reading budget that fleet went
+        blind to half its region and left an erupted emergency unread for
+        three straight rounds.</span></span></p>
+    </div>
+    <p>There are two honest boundaries around that finding. First, the
+    benefit appears when the team is stretched thin, and it roughly
+    disappears when the team has slack, because today's AI agents are smart
+    enough to rescue any organization when they have room to maneuver.
+    Stretched thin is exactly the condition real systems fail in, so this is
+    where the choice of rule earns its keep. Second, the growth catalog is a
+    menu with trade-offs, and picking wrong hurts. The slime-mould rule made
+    a real fleet go blind at a tight budget. The root-tip rule applied as a
+    hard mandate cost a real dispatcher a third of the people it could have
+    saved. The benefit comes from matching the rule to the constraint, and
+    our scoreboard says which rule fits which constraint, with numbers.</p>
+    <div class="growths">
+      <p class="growths-title">The verdicts so far, rule by rule</p>
+      <p class="gr"><span class="gr-name">Fungal network</span><span class="gr-body">
+        <span class="gr-rule">Spread connections across neighbors; merge
+        instead of ranking; pass sideways tips.</span>
+        <span class="gr-impact">Has never lost. Kept all 64 communities
+        visible, caught both emergencies early, held its evidence through
+        damage.</span></span></p>
+      <p class="gr"><span class="gr-name">Coral</span><span class="gr-body">
+        <span class="gr-rule">Never erase: every discarded source leaves a
+        small permanent record.</span>
+        <span class="gr-impact">The cheapest rule in the catalog, and the one
+        that made perfect repair possible after damage.</span></span></p>
+      <p class="gr"><span class="gr-name">Lichen</span><span class="gr-body">
+        <span class="gr-rule">Keep two information sources as separate
+        partners all the way to the decision.</span>
+        <span class="gr-impact">Cheap insurance: about 3 percent in calm
+        conditions, and the only scripted desk that improved when one source
+        began lying.</span></span></p>
+      <p class="gr"><span class="gr-name">Vascular</span><span class="gr-body">
+        <span class="gr-rule">Fixed rotation: every district gets read on a
+        schedule, whatever happens.</span>
+        <span class="gr-impact">Reliable and never fast. It missed nothing,
+        and it never caught anything early.</span></span></p>
+      <p class="gr"><span class="gr-name">Slime mould</span><span class="gr-body">
+        <span class="gr-rule">Feed attention to whatever recently produced
+        results, and let the rest fade.</span>
+        <span class="gr-impact">Dangerous when the team is stretched: a real
+        fleet using it went blind to half its region and missed an erupting
+        emergency for three rounds.</span></span></p>
+      <p class="gr"><span class="gr-name">Root tip</span><span class="gr-body">
+        <span class="gr-rule">Go and get the missing fact directly before
+        acting.</span>
+        <span class="gr-impact">Helpful only with its own budget. As a hard
+        mandate it spent every flight on the same liar and reached 131 people
+        of a possible 207.</span></span></p>
+      <p class="gr"><span class="gr-name">Bacterial swarm</span><span class="gr-body">
+        <span class="gr-rule">Merge everything into one shared map and herd
+        toward the strongest signal.</span>
+        <span class="gr-impact">Safe only when the merging is done by
+        something that can think; dumb-math merging remains the risk our
+        simulations showed.</span></span></p>
+      <p class="gr"><span class="gr-name">Tendril</span><span class="gr-body">
+        <span class="gr-rule">Sweep until you find support, then wrap it.</span>
+        <span class="gr-impact">Untested so far. It is first in line for the
+        next round.</span></span></p>
+    </div>
+    <figure>
+      <div class="fig" id="fig-organisms"></div>
+      <figcaption>The eight growth rules in the catalog, each running live as a
+      small simulation. Slime mould thickens busy paths. Fungal network
+      branches and fuses. Root tip probes for what is missing. Lichen grows as
+      an exchanging pair. Vascular ranks branches under one trunk. Coral adds
+      layers and erases nothing. Bacterial swarm herds toward the strongest
+      signal. Tendril sweeps until it finds support.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p class="kicker">Why we are entering the hackathon</p>
+    <h2>We found this at small scale, and the hackathon's computers are how we test it at a much larger one.</h2>
+    <p>Everything above comes from small worlds: 240 real Claude agents across
+    all runs so far, regions of 12 to 64 communities, and one AI model family
+    doing all the thinking. The finding's shape makes the next step obvious.
+    The rules matter most when capacity is scarce, so the honest test removes
+    the remaining slack and raises the scale. That means summaries too short
+    to smuggle details into, merging done by pure arithmetic, and deadlines
+    tight enough that serving one emergency forces dropping another. It also
+    means fleets of hundreds of agents instead of six, and hundreds of
+    repeated runs to find the exact tipping point where each rule flips from
+    asset to liability.</p>
+    <p>That work needs local AI models on dedicated hardware, because it is
+    thousands of agent decisions per experiment. It also needs genuinely
+    different AI models running side by side, because one of our built and
+    waiting experiments asks whether seven institutions sharing one accurate
+    model fail together — and seven prompt personas served by a single model
+    share that model's blind spots. The hackathon offers seven-card
+    workstations that fit exactly this: one local model per card, running
+    fleets in parallel, repeating until the thresholds are measured instead
+    of estimated. In one sentence: organizing rules copied from living
+    networks measurably changed who a real AI fleet could see, prove, and
+    save, and we want the compute to find precisely where each rule stops
+    being safe.</p>
+  </section>
+
+  <section>
+    <p class="kicker">How we keep the results honest</p>
+    <h2>The predictions are saved publicly before anything runs, and scripts count every score.</h2>
+    <p>Before each experiment, we write down what we expect to happen and
+    commit it to the project's public history, so nobody can quietly change
+    the story afterward. The simulated worlds are generated from fixed seeds
+    and committed too. The organizing rule under test is enforced by the
+    harness code; the AI agents only read, judge, and choose. A script counts
+    every score against a sealed answer key. Most of our predictions have
+    been wrong — ten of fourteen in the simulated round, three more in the
+    live round — and the wrong ones are published beside the right ones.
+    The surviving findings earned their place by outliving our own
+    expectations.</p>
+  </section>
+
+  <section>
+    <p class="kicker">The flooded region: our first test</p>
+    <h2>A flood hit 64 communities, and the rule for summarizing survey reports decided which ones the rescue office could see.</h2>
+    <p>This was the experiment that started the project, run with scripted
+    stand-in agents so every mechanism stays visible. Survey teams visited all
+    64 communities identically in both runs; the only difference was the rule
+    deciding which reports keep their place when the summaries get crowded.
+    Under the standard rule, where reports that recently led to action keep
+    their spot, 26 communities vanished from the briefing while still being
+    visited every day. The office could see 8,935 of the region's 16,299
+    people. Under the rule copied from fungal networks, where neighboring
+    reports merge and travel together, the office could see every one of the
+    16,299, at the same cost. The obvious repair failed: sending extra
+    surveyors back to the dropped communities made things worse, because
+    their new reports died at the same summarizing stage as the old
+    ones.</p>
+    <figure>
+      <div class="fig" id="fig-twin"></div>
+      <figcaption>The first test, replayed from its real event log. Both panels
+      received identical surveying. On one side the crowding rule dims
+      communities to grey as the briefing drops them, ending at 8,935 of
+      16,299 people visible; on the other side the fungal merging rule keeps
+      every community lit.</figcaption>
+    </figure>
+    <figure>
+      <img src="shots/strata.png" alt="A stack of five translucent slabs; the bottom slab is dense with settlements and the top is nearly empty, with columns of light stopping between them.">
+      <figcaption>The same kind of flooded territory as a five-layer stack,
+      from the page called The Strata. The bottom slab holds every person and
+      building, the top slab holds what the decision office acts on, and a
+      settlement&#39;s column of light stops at the layer where the AI fleet
+      lost track of it.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p class="kicker">The 24-town disaster: 99 real agents</p>
+    <h2>Six real AI surveyors could read only half a disaster region each round, and the organizing rule decided which emergencies got caught.</h2>
+    <p>We then repeated the idea with real Claude agents: a 16-agent pilot
+    first, then fleets of 57 and 99 agents working five-round disasters with
+    planted emergencies. The pilot taught us something reassuring: one
+    capable agent with room to work protects the quiet emergencies on its
+    own. The danger lives in the organizing rules, and the rules only bite
+    when capacity is tight. So we tightened the budget until each fleet could
+    read only half its 24 towns per round. The fleet organized like a slime
+    mould locked onto twelve towns and left an erupted emergency unread for
+    three straight rounds. The fleet with fungal coverage and sideways tips
+    held twenty towns, and its chief sent help to both emergencies before
+    they erupted, acting on neighbors' warnings. The fleet on a fixed
+    rotation stayed reliable, and it never caught anything early.</p>
+    <figure>
+      <div class="fig" id="fig-fleet"></div>
+      <figcaption>The real five-round run with Claude agents, replayed from
+      its logs. From round two the slime-mould panel goes half grey and stays
+      that way; the two planted emergencies pulse from round three, and the
+      rotation and fungal-network fleets keep reading towns the slime-mould
+      fleet has stopped seeing.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p class="kicker">The storm coast, with real agents</p>
+    <h2>Phone callers lied about a flood, and the team forced to double-check every disagreement lost a third of the people.</h2>
+    <p>We built a pretend coast of twelve villages. A rescue office decides
+    where to send its one boat, using satellite photos and phone calls from
+    villagers. In the storm's last three rounds we made some callers
+    exaggerate wildly while the worst-hit village went silent. The office
+    that had to fly out and verify every disagreement — the root-tip rule as
+    a mandate — wasted its flights on the loudest liar and reached 131
+    people, while the best office reached 207. We predicted that failure and
+    it happened. Our other prediction failed usefully: merging both sources
+    into one map turned out safe here, because the AI doing the merging
+    noticed the lies and corrected them on its own. Merging is dangerous when
+    it is done by dumb math; ours had a mind in the loop.</p>
+    <figure>
+      <img src="shots/boat.png" alt="Two dark coastlines side by side; the right one carries orange bands where verification flights burned rescue time.">
+      <figcaption>The storm coast instrument, replaying the scripted version
+      of the experiment mid-run. Both desks face the same storm. The orange
+      marks on one desk&#39;s sea are the verification flights its rule
+      forced, and the running totals under the panels show the checking desk
+      falling behind.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p class="kicker">The bridge office, with real agents</p>
+    <h2>Half a bridge-inspection office was destroyed, and the team that kept records of its discards was the only one that stayed perfect.</h2>
+    <p>A pretend city watches an old bridge through sixteen sensors. AI
+    workers summarize the readings, a chief writes the safety verdict, and
+    then we destroyed half the office's paperwork and asked a fresh worker to
+    prove each safety statement from a surviving sensor reading. The team
+    following the fungal rule with the coral habit — several sources cited
+    per report, plus a note about every source left out — proved all eight
+    statements. The team keeping only its single strongest source was
+    predicted to collapse and nearly did not: its writers had mentioned the
+    other sensors inside their sentences anyway, so it proved seven of eight.
+    The one statement it lost was the fact its writer had also left out of
+    the prose. A fact dropped from both places was gone for good.</p>
+    <figure>
+      <img src="shots/bridge.png" alt="Two towers of glowing evidence links above the same ground plane, moments after ten summarizing computers failed in both.">
+      <figcaption>The bridge instrument at the moment ten of the 32
+      summarizing computers fail in both towers at once. One tower kept no
+      records of its discarded links, so its breaks will be permanent. The
+      other tower holds 524 tombstones — small records of every cut — and
+      will replay them to heal.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p class="kicker">The deadline region, with real agents</p>
+    <h2>Five flash floods hit on deadlines, every team saved everyone, and one AI found the loophole in its own rule.</h2>
+    <p>Sixteen towns, four walking rescue crews, floods with three-round
+    deadlines, and a map that is always slightly out of date. All three team
+    organizations saved all five floods and all 1,487 people, so our
+    prediction that the stricter rules would lose people was wrong. The
+    valuable part came from watching one dispatcher think. Its rule said a
+    route may only change after a crew finishes it, so the dispatcher gave
+    out one-stop routes: every route finishes each round, and the office gets
+    a fresh decision each round. It found that loophole unprompted and
+    explained its own reasoning as it went. Rules that restrict changing
+    plans do nothing to stop an agent from making smaller plans.</p>
+    <figure>
+      <img src="shots/mapworld.png" alt="Two maps of the same forty-town region; one is crossed with orange walked-back trails, the other has clean threads and orange blooms at missed sites.">
+      <figcaption>The deadline region instrument mid-run, in its scripted
+      version. The desk that turns crews around carries orange walked-back
+      scars and has missed nobody. The desk that keeps its plans tidy shows
+      clean threads, and orange blooms where emergencies burned past their
+      deadlines.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p class="kicker">The law underneath all of it</p>
+    <h2>The rules matter most exactly when the team is stretched thin.</h2>
+    <p>Across every run, the same pattern held. When the rule truly forced
+    the agents' hands, the failures our simple simulations predicted arrived
+    on schedule with real agents. When the rule left wiggle room, a capable
+    agent found the wiggle room and rescued the situation. Choosing the right
+    organizing rule is therefore cheap insurance that pays out precisely when
+    everything else is failing — and that is the claim we want to test at a
+    scale where the insurance would matter in the real world.</p>
+    <p class="closing">The full experiment write-ups, the failed predictions,
+    the run logs, and the mechanical scorecards are all in this repository.
+    The live-run details are on the page called The Live Runs, and the
+    complete experiment catalog is on the page called The Complete Guide,
+    both reachable from the menu at the top right.</p>
+  </section>
+
+  <footer>AURAWORLD &middot; 240 real Claude agents across all runs &middot;
+  every prediction committed before its experiment ran &middot; 2026</footer>
+
+</div>
+<script src="guide-data.js"></script>
+<script src="figs/organisms.js"></script>
+<script src="figs/twin.js"></script>
+<script src="figs/fleet.js"></script>
+<script src="/nav.js" defer></script>
+</body>
+</html>

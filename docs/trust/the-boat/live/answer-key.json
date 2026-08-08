@@ -1,0 +1,119 @@
+{
+  "seed": 43,
+  "names": [
+    "Saltmarsh Row",
+    "Herring Quay",
+    "Dune Cottages",
+    "Ternwick",
+    "Greywater Stairs",
+    "Pilot Green",
+    "Cockle Strand",
+    "Lantern Hill",
+    "Mudflat Lane",
+    "Osprey Point",
+    "Wrack End",
+    "Channel Head"
+  ],
+  "rounds": 6,
+  "poisonFrom": 4,
+  "exaggerators": [
+    "Dune Cottages",
+    "Osprey Point",
+    "Greywater Stairs"
+  ],
+  "truth": [
+    [
+      4,
+      25,
+      3,
+      0,
+      52,
+      20,
+      2,
+      21,
+      4,
+      6,
+      0,
+      5
+    ],
+    [
+      4,
+      19,
+      0,
+      3,
+      5,
+      4,
+      20,
+      3,
+      3,
+      29,
+      1,
+      48
+    ],
+    [
+      0,
+      28,
+      6,
+      12,
+      28,
+      6,
+      5,
+      7,
+      1,
+      45,
+      7,
+      7
+    ],
+    [
+      0,
+      5,
+      0,
+      19,
+      2,
+      50,
+      3,
+      19,
+      7,
+      1,
+      6,
+      26
+    ],
+    [
+      5,
+      17,
+      3,
+      25,
+      5,
+      4,
+      38,
+      24,
+      4,
+      3,
+      4,
+      2
+    ],
+    [
+      2,
+      16,
+      4,
+      1,
+      4,
+      2,
+      13,
+      6,
+      6,
+      5,
+      43,
+      25
+    ]
+  ],
+  "worstOf": [
+    "Greywater Stairs",
+    "Channel Head",
+    "Osprey Point",
+    "Pilot Green",
+    "Cockle Strand",
+    "Wrack End"
+  ],
+  "slotsPerRound": 2
+}

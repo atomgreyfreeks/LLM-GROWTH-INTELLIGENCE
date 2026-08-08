@@ -1,0 +1,56 @@
+{
+  "seed": 41,
+  "zones": [
+    {
+      "name": "north anchorage",
+      "ids": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "name": "south anchorage",
+      "ids": [
+        "S05",
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "name": "east span",
+      "ids": [
+        "S09",
+        "S10",
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "name": "west span",
+      "ids": [
+        "S13",
+        "S14",
+        "S15",
+        "S16"
+      ]
+    }
+  ],
+  "damagedZones": [
+    "north anchorage",
+    "east span"
+  ],
+  "answers": {
+    "Q1": "S01",
+    "Q2": "S03",
+    "Q3": "S06",
+    "Q4": "S07",
+    "Q5": "S09",
+    "Q6": "S12",
+    "Q7": "S14",
+    "Q8": "S15"
+  },
+  "pullCap": 8
+}

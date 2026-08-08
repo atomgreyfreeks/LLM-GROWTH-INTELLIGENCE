@@ -1,0 +1,796 @@
+{
+  "E1": [
+    {
+      "name": "E1 V=physarum",
+      "mean": {
+        "unmetNeed": 3.5869767884148933,
+        "extinctPop": 7453.625,
+        "reprSettlements": 36.375,
+        "reprPop": 10617,
+        "giniDecision": 0.49749999999999994,
+        "meanDiscovery": 4.7625,
+        "neverFound": 0.012749999999999997,
+        "worstStaleTop": 400
+      },
+      "sd": {
+        "unmetNeed": 0.28426508900357456,
+        "extinctPop": 657.814171613078,
+        "reprSettlements": 1.2183492931011204,
+        "reprPop": 1178.9028797996891,
+        "giniDecision": 0.017356554957709797,
+        "meanDiscovery": 0.7482270711488592,
+        "neverFound": 0.008856494791959177,
+        "worstStaleTop": 0
+      }
+    },
+    {
+      "name": "E1 V=vascular",
+      "mean": {
+        "unmetNeed": 1.6996484085918124,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.17950000000000002,
+        "meanDiscovery": 4.7625,
+        "neverFound": 0.012749999999999997,
+        "worstStaleTop": 77.375
+      },
+      "sd": {
+        "unmetNeed": 0.1766254111135591,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.0146799182559032,
+        "meanDiscovery": 0.7482270711488592,
+        "neverFound": 0.008856494791959177,
+        "worstStaleTop": 5.8081300777444715
+      }
+    },
+    {
+      "name": "E1 V=mycelium",
+      "mean": {
+        "unmetNeed": 1.3162222746534877,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.066,
+        "meanDiscovery": 4.7625,
+        "neverFound": 0.012749999999999997,
+        "worstStaleTop": 10.75
+      },
+      "sd": {
+        "unmetNeed": 0.16451973558288707,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.008874119674649425,
+        "meanDiscovery": 0.7482270711488592,
+        "neverFound": 0.008856494791959177,
+        "worstStaleTop": 2.277608394786075
+      }
+    }
+  ],
+  "E2": [
+    {
+      "name": "E2 explore=0/tick",
+      "mean": {
+        "unmetNeed": 16.97159568527563,
+        "extinctPop": 15982.5,
+        "reprSettlements": 8,
+        "reprPop": 2088.125,
+        "giniDecision": 0.8760000000000001,
+        "meanDiscovery": 85.00000000000001,
+        "neverFound": 0.85,
+        "worstStaleTop": 400
+      },
+      "sd": {
+        "unmetNeed": 1.4923029709189504,
+        "extinctPop": 1165.086370188923,
+        "reprSettlements": 0,
+        "reprPop": 697.9698126530975,
+        "giniDecision": 1.1102230246251565e-16,
+        "meanDiscovery": 3.1559467676119017,
+        "neverFound": 0.031559467676118995,
+        "worstStaleTop": 0
+      }
+    },
+    {
+      "name": "E2 explore=0.5/tick",
+      "mean": {
+        "unmetNeed": 7.854978523527558,
+        "extinctPop": 1433.125,
+        "reprSettlements": 57.375,
+        "reprPop": 16637.5,
+        "giniDecision": 0.38887499999999997,
+        "meanDiscovery": 55.85,
+        "neverFound": 0.36075000000000007,
+        "worstStaleTop": 400
+      },
+      "sd": {
+        "unmetNeed": 1.847987374653092,
+        "extinctPop": 775.8847268602469,
+        "reprSettlements": 1.8666480653835098,
+        "reprPop": 1384.7395061887994,
+        "giniDecision": 0.01100497046792949,
+        "meanDiscovery": 6.67869747780209,
+        "neverFound": 0.06049121837093381,
+        "worstStaleTop": 0
+      }
+    },
+    {
+      "name": "E2 explore=1/tick",
+      "mean": {
+        "unmetNeed": 5.373130153221902,
+        "extinctPop": 972.25,
+        "reprSettlements": 60.25,
+        "reprPop": 17098.375,
+        "giniDecision": 0.25937499999999997,
+        "meanDiscovery": 40.137499999999996,
+        "neverFound": 0.19,
+        "worstStaleTop": 204.125
+      },
+      "sd": {
+        "unmetNeed": 0.44160687652555325,
+        "extinctPop": 667.132248883233,
+        "reprSettlements": 1.1989578808281798,
+        "reprPop": 1376.5931622578255,
+        "giniDecision": 0.02169065178827045,
+        "meanDiscovery": 3.630405452563115,
+        "neverFound": 0.03647601951967895,
+        "worstStaleTop": 59.191294756915056
+      }
+    },
+    {
+      "name": "E2 explore=2/tick",
+      "mean": {
+        "unmetNeed": 3.8729117073878503,
+        "extinctPop": 51,
+        "reprSettlements": 63.625,
+        "reprPop": 18019.625,
+        "giniDecision": 0.213625,
+        "meanDiscovery": 26.95,
+        "neverFound": 0.08925,
+        "worstStaleTop": 104.375
+      },
+      "sd": {
+        "unmetNeed": 0.6693899302283928,
+        "extinctPop": 71.67809986320788,
+        "reprSettlements": 0.4841229182759271,
+        "reprPop": 1174.2714696248904,
+        "giniDecision": 0.014653817761934943,
+        "meanDiscovery": 2.154646142641525,
+        "neverFound": 0.020419047480232762,
+        "worstStaleTop": 42.54684917828816
+      }
+    },
+    {
+      "name": "E2 explore=4/tick",
+      "mean": {
+        "unmetNeed": 2.545461251991017,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.19474999999999998,
+        "meanDiscovery": 14.95,
+        "neverFound": 0.034375,
+        "worstStaleTop": 47.625
+      },
+      "sd": {
+        "unmetNeed": 0.2933903644831814,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.016037066439969622,
+        "meanDiscovery": 1.16940155635265,
+        "neverFound": 0.010427577618987069,
+        "worstStaleTop": 11.123595416950403
+      }
+    },
+    {
+      "name": "E2 uniform (null)",
+      "mean": {
+        "unmetNeed": 1.7311054468491909,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.182625,
+        "meanDiscovery": 4.7625,
+        "neverFound": 0.012749999999999997,
+        "worstStaleTop": 22
+      },
+      "sd": {
+        "unmetNeed": 0.17649417185745137,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.01843188473813788,
+        "meanDiscovery": 0.7482270711488592,
+        "neverFound": 0.008856494791959177,
+        "worstStaleTop": 2.7838821814150108
+      }
+    },
+    {
+      "name": "E2 oracle-sensor",
+      "mean": {
+        "unmetNeed": 3.583842027469176,
+        "extinctPop": 3282.5,
+        "reprSettlements": 53.25,
+        "reprPop": 14788.125,
+        "giniDecision": 0.555125,
+        "meanDiscovery": 0.9875,
+        "neverFound": 0.00825,
+        "worstStaleTop": 400
+      },
+      "sd": {
+        "unmetNeed": 0.37311952860201075,
+        "extinctPop": 841.7673372137933,
+        "reprSettlements": 1.920286436967152,
+        "reprPop": 1567.0478165566615,
+        "giniDecision": 0.029662423619792086,
+        "meanDiscovery": 1.1504754451964632,
+        "neverFound": 0.01107643895843786,
+        "worstStaleTop": 0
+      }
+    },
+    {
+      "name": "E2 oracle+ (ceiling)",
+      "mean": {
+        "unmetNeed": 0.5034068756478606,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.065625,
+        "meanDiscovery": 0,
+        "neverFound": 0,
+        "worstStaleTop": 9.625
+      },
+      "sd": {
+        "unmetNeed": 0.04830395165769888,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.008184398267435425,
+        "meanDiscovery": 0,
+        "neverFound": 0,
+        "worstStaleTop": 3.3888604279314896
+      }
+    }
+  ],
+  "E2b": [
+    {
+      "name": "E2b uniform K=4",
+      "mean": {
+        "unmetNeed": 2.8578601205379965,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.302625,
+        "meanDiscovery": 9.5625,
+        "neverFound": 0.0235,
+        "worstStaleTop": 34.5
+      },
+      "sd": {
+        "unmetNeed": 0.3647470778941215,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.030995715429717054,
+        "meanDiscovery": 1.3209253385411304,
+        "neverFound": 0.015644487847162016,
+        "worstStaleTop": 9.836157786453
+      }
+    },
+    {
+      "name": "E2b phys e=1/tick K=4",
+      "mean": {
+        "unmetNeed": 6.403049547585683,
+        "extinctPop": 755.625,
+        "reprSettlements": 60.75,
+        "reprPop": 17315,
+        "giniDecision": 0.303125,
+        "meanDiscovery": 48.137499999999996,
+        "neverFound": 0.254,
+        "worstStaleTop": 173.5
+      },
+      "sd": {
+        "unmetNeed": 0.5354481030520106,
+        "extinctPop": 477.7721573878076,
+        "reprSettlements": 1.5612494995995996,
+        "reprPop": 1218.8956066866433,
+        "giniDecision": 0.028241978949783246,
+        "meanDiscovery": 3.515301373993417,
+        "neverFound": 0.03108054053584011,
+        "worstStaleTop": 28.040149785619906
+      }
+    },
+    {
+      "name": "E2b phys e=0 K=4",
+      "mean": {
+        "unmetNeed": 18.38407312925072,
+        "extinctPop": 17050,
+        "reprSettlements": 4,
+        "reprPop": 1020.625,
+        "giniDecision": 0.9379999999999998,
+        "meanDiscovery": 93.53750000000001,
+        "neverFound": 0.935375,
+        "worstStaleTop": 400
+      },
+      "sd": {
+        "unmetNeed": 1.7951771957686125,
+        "extinctPop": 1232.2631618286737,
+        "reprSettlements": 0,
+        "reprPop": 515.2855852583109,
+        "giniDecision": 1.1102230246251565e-16,
+        "meanDiscovery": 2.7022849128099,
+        "neverFound": 0.027022849128098957,
+        "worstStaleTop": 0
+      }
+    },
+    {
+      "name": "E2b oracle+ K=4",
+      "mean": {
+        "unmetNeed": 0.5034068756478606,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.065625,
+        "meanDiscovery": 0,
+        "neverFound": 0,
+        "worstStaleTop": 9.75
+      },
+      "sd": {
+        "unmetNeed": 0.04830395165769888,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.008184398267435425,
+        "meanDiscovery": 0,
+        "neverFound": 0,
+        "worstStaleTop": 3.8649062084350767
+      }
+    }
+  ],
+  "E3": [
+    {
+      "name": "E3 fb=on cpl=on",
+      "mean": {
+        "unmetNeed": 5.049561147007332,
+        "extinctPop": 6855.375,
+        "reprSettlements": 39.375,
+        "reprPop": 11215.25,
+        "giniDecision": 0.597625,
+        "meanDiscovery": 26.8125,
+        "neverFound": 0.073875,
+        "worstStaleTop": 383.625
+      },
+      "sd": {
+        "unmetNeed": 0.774568782435902,
+        "extinctPop": 968.3738866651661,
+        "reprSettlements": 2.057759704144291,
+        "reprPop": 1028.5827324527668,
+        "giniDecision": 0.018472530281474723,
+        "meanDiscovery": 2.3693023762280743,
+        "neverFound": 0.022552369609422425,
+        "worstStaleTop": 18.60737421024256
+      }
+    },
+    {
+      "name": "E3 fb=on cpl=off",
+      "mean": {
+        "unmetNeed": 4.927546032264038,
+        "extinctPop": 6529.125,
+        "reprSettlements": 41.375,
+        "reprPop": 11541.5,
+        "giniDecision": 0.5868749999999999,
+        "meanDiscovery": 26.3,
+        "neverFound": 0.08537499999999999,
+        "worstStaleTop": 388.5
+      },
+      "sd": {
+        "unmetNeed": 0.6298325925216688,
+        "extinctPop": 1040.8895759757613,
+        "reprSettlements": 1.9324531042175384,
+        "reprPop": 1119.0078194543594,
+        "giniDecision": 0.01888410376480705,
+        "meanDiscovery": 2.2830900113661747,
+        "neverFound": 0.021799870985856774,
+        "worstStaleTop": 9.836157786453
+      }
+    },
+    {
+      "name": "E3 fb=off cpl=on",
+      "mean": {
+        "unmetNeed": 3.8140797457530438,
+        "extinctPop": 940.125,
+        "reprSettlements": 61.25,
+        "reprPop": 17130.5,
+        "giniDecision": 0.202875,
+        "meanDiscovery": 27.025000000000002,
+        "neverFound": 0.087625,
+        "worstStaleTop": 153.5
+      },
+      "sd": {
+        "unmetNeed": 0.7056202592232051,
+        "extinctPop": 751.3656628932414,
+        "reprSettlements": 1.3919410907075054,
+        "reprPop": 1132.3880739393187,
+        "giniDecision": 0.012241706376155246,
+        "meanDiscovery": 3.0132001261117716,
+        "neverFound": 0.03886816660198935,
+        "worstStaleTop": 62.65181561614955
+      }
+    },
+    {
+      "name": "E3 fb=off cpl=off",
+      "mean": {
+        "unmetNeed": 3.9795674871793145,
+        "extinctPop": 559.125,
+        "reprSettlements": 61.75,
+        "reprPop": 17511.5,
+        "giniDecision": 0.211625,
+        "meanDiscovery": 27.900000000000002,
+        "neverFound": 0.08912499999999998,
+        "worstStaleTop": 138.375
+      },
+      "sd": {
+        "unmetNeed": 0.5508074623546952,
+        "extinctPop": 456.0132776301585,
+        "reprSettlements": 1.0897247358851685,
+        "reprPop": 1408.5331022024295,
+        "giniDecision": 0.01624759597602057,
+        "meanDiscovery": 2.6414957883744576,
+        "neverFound": 0.01748883572454153,
+        "worstStaleTop": 27.856496100550764
+      }
+    }
+  ],
+  "E4": [
+    {
+      "name": "E4 none (worst cell)",
+      "mean": {
+        "unmetNeed": 5.049561147007332,
+        "extinctPop": 6855.375,
+        "reprSettlements": 39.375,
+        "reprPop": 11215.25,
+        "giniDecision": 0.597625,
+        "meanDiscovery": 26.8125,
+        "neverFound": 0.073875,
+        "worstStaleTop": 383.625
+      },
+      "sd": {
+        "unmetNeed": 0.774568782435902,
+        "extinctPop": 968.3738866651661,
+        "reprSettlements": 2.057759704144291,
+        "reprPop": 1028.5827324527668,
+        "giniDecision": 0.018472530281474723,
+        "meanDiscovery": 2.3693023762280743,
+        "neverFound": 0.022552369609422425,
+        "worstStaleTop": 18.60737421024256
+      }
+    },
+    {
+      "name": "E4 a) explore x2",
+      "mean": {
+        "unmetNeed": 4.079927724261009,
+        "extinctPop": 7574.875,
+        "reprSettlements": 39.125,
+        "reprPop": 10495.75,
+        "giniDecision": 0.58175,
+        "meanDiscovery": 16.012500000000003,
+        "neverFound": 0.040374999999999994,
+        "worstStaleTop": 393.25
+      },
+      "sd": {
+        "unmetNeed": 0.5334376204951795,
+        "extinctPop": 742.5852539439495,
+        "reprSettlements": 2.0879116360612584,
+        "reprPop": 1239.9221497739284,
+        "giniDecision": 0.011551515052147932,
+        "meanDiscovery": 1.2732217992164596,
+        "neverFound": 0.018234154079638572,
+        "worstStaleTop": 2.817356917396161
+      }
+    },
+    {
+      "name": "E4 b) mycelium-V",
+      "mean": {
+        "unmetNeed": 2.768941089358337,
+        "extinctPop": 28.25,
+        "reprSettlements": 63.625,
+        "reprPop": 18042.375,
+        "giniDecision": 0.13875,
+        "meanDiscovery": 24.1875,
+        "neverFound": 0.0735,
+        "worstStaleTop": 108.5
+      },
+      "sd": {
+        "unmetNeed": 0.3313765532938285,
+        "extinctPop": 53.05127236928441,
+        "reprSettlements": 0.6959705453537527,
+        "reprPop": 1218.9440037897557,
+        "giniDecision": 0.010532687216470445,
+        "meanDiscovery": 3.1070232940871234,
+        "neverFound": 0.033380383460949035,
+        "worstStaleTop": 35.33765696816924
+      }
+    },
+    {
+      "name": "E4 c) rootdown stale",
+      "mean": {
+        "unmetNeed": 4.830484215500969,
+        "extinctPop": 7597.875,
+        "reprSettlements": 38.25,
+        "reprPop": 10472.75,
+        "giniDecision": 0.6,
+        "meanDiscovery": 25.887499999999996,
+        "neverFound": 0.08574999999999999,
+        "worstStaleTop": 372.625
+      },
+      "sd": {
+        "unmetNeed": 0.45404442750122936,
+        "extinctPop": 1062.9503089867371,
+        "reprSettlements": 2.0463381929681126,
+        "reprPop": 997.5863057901306,
+        "giniDecision": 0.019364916731037102,
+        "meanDiscovery": 2.9947610505681417,
+        "neverFound": 0.03277098564279079,
+        "worstStaleTop": 12.618810363897225
+      }
+    },
+    {
+      "name": "E4 c') rootdown random",
+      "mean": {
+        "unmetNeed": 4.2244227368114835,
+        "extinctPop": 6803.375,
+        "reprSettlements": 40,
+        "reprPop": 11267.25,
+        "giniDecision": 0.5858749999999999,
+        "meanDiscovery": 20.2375,
+        "neverFound": 0.047125,
+        "worstStaleTop": 383.75
+      },
+      "sd": {
+        "unmetNeed": 0.5039702606769652,
+        "extinctPop": 658.0467189911367,
+        "reprSettlements": 2.0615528128088303,
+        "reprPop": 1219.889518563054,
+        "giniDecision": 0.019238226919339543,
+        "meanDiscovery": 1.9980850207135832,
+        "neverFound": 0.02435383696668761,
+        "worstStaleTop": 12.754901018824098
+      }
+    },
+    {
+      "name": "E4 c2) rootdown answered",
+      "mean": {
+        "unmetNeed": 4.044515880260178,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.608375,
+        "meanDiscovery": 15.9375,
+        "neverFound": 0.036125,
+        "worstStaleTop": 40.375
+      },
+      "sd": {
+        "unmetNeed": 0.37312307589050486,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.020511810622175723,
+        "meanDiscovery": 2.06333316505115,
+        "neverFound": 0.013896379924282441,
+        "worstStaleTop": 1.1110243021644486
+      }
+    },
+    {
+      "name": "E4 d) b+c combined",
+      "mean": {
+        "unmetNeed": 1.735470449423349,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.112,
+        "meanDiscovery": 14.3875,
+        "neverFound": 0.03375,
+        "worstStaleTop": 19.375
+      },
+      "sd": {
+        "unmetNeed": 0.15869334660898812,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.01646207763315433,
+        "meanDiscovery": 0.9778004653302229,
+        "neverFound": 0.015841006912440888,
+        "worstStaleTop": 2.117634293262177
+      }
+    },
+    {
+      "name": "E4 d2) b+c2 combined",
+      "mean": {
+        "unmetNeed": 1.750076468731625,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.106625,
+        "meanDiscovery": 15.025,
+        "neverFound": 0.041,
+        "worstStaleTop": 21.125
+      },
+      "sd": {
+        "unmetNeed": 0.22087866724617977,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.018220438386603106,
+        "meanDiscovery": 2.1329263934791562,
+        "neverFound": 0.01650757401921918,
+        "worstStaleTop": 1.2686114456365274
+      }
+    },
+    {
+      "name": "E4 oracle+ (ceiling)",
+      "mean": {
+        "unmetNeed": 0.5034068756478606,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.065625,
+        "meanDiscovery": 0,
+        "neverFound": 0,
+        "worstStaleTop": 9.625
+      },
+      "sd": {
+        "unmetNeed": 0.04830395165769888,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.008184398267435425,
+        "meanDiscovery": 0,
+        "neverFound": 0,
+        "worstStaleTop": 3.3888604279314896
+      }
+    }
+  ],
+  "E5": [
+    {
+      "name": "E5 none (= E1 erased)",
+      "mean": {
+        "unmetNeed": 3.5869767884148933,
+        "extinctPop": 7453.625,
+        "reprSettlements": 36.375,
+        "reprPop": 10617,
+        "giniDecision": 0.49749999999999994,
+        "meanDiscovery": 4.7625,
+        "neverFound": 0.012749999999999997,
+        "worstStaleTop": 400
+      },
+      "sd": {
+        "unmetNeed": 0.28426508900357456,
+        "extinctPop": 657.814171613078,
+        "reprSettlements": 1.2183492931011204,
+        "reprPop": 1178.9028797996891,
+        "giniDecision": 0.017356554957709797,
+        "meanDiscovery": 0.7482270711488592,
+        "neverFound": 0.008856494791959177,
+        "worstStaleTop": 0
+      }
+    },
+    {
+      "name": "E5 c) re-visit stale",
+      "mean": {
+        "unmetNeed": 5.02055805736593,
+        "extinctPop": 9153.375,
+        "reprSettlements": 31,
+        "reprPop": 8917.25,
+        "giniDecision": 0.552625,
+        "meanDiscovery": 14.25,
+        "neverFound": 0.110375,
+        "worstStaleTop": 400
+      },
+      "sd": {
+        "unmetNeed": 1.0850037877191558,
+        "extinctPop": 1181.5500346472847,
+        "reprSettlements": 1,
+        "reprPop": 1134.8406000403756,
+        "giniDecision": 0.04137009034314525,
+        "meanDiscovery": 3.0409702399069936,
+        "neverFound": 0.029499735168302784,
+        "worstStaleTop": 0
+      }
+    },
+    {
+      "name": "E5 c2) rootdown answered",
+      "mean": {
+        "unmetNeed": 4.149991659555467,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.620625,
+        "meanDiscovery": 6.925,
+        "neverFound": 0.0215,
+        "worstStaleTop": 34.25
+      },
+      "sd": {
+        "unmetNeed": 0.3394223835904764,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.025440801382818134,
+        "meanDiscovery": 1.1464619487798102,
+        "neverFound": 0.010380269746013348,
+        "worstStaleTop": 1.0897247358851685
+      }
+    },
+    {
+      "name": "E5 b) mycelium (= held)",
+      "mean": {
+        "unmetNeed": 1.3162222746534877,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.066,
+        "meanDiscovery": 4.7625,
+        "neverFound": 0.012749999999999997,
+        "worstStaleTop": 10.75
+      },
+      "sd": {
+        "unmetNeed": 0.16451973558288707,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.008874119674649425,
+        "meanDiscovery": 0.7482270711488592,
+        "neverFound": 0.008856494791959177,
+        "worstStaleTop": 2.277608394786075
+      }
+    },
+    {
+      "name": "E5 d2) b+c2 pairing",
+      "mean": {
+        "unmetNeed": 1.271421106833377,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.11374999999999999,
+        "meanDiscovery": 5.4125,
+        "neverFound": 0.016125,
+        "worstStaleTop": 10.875
+      },
+      "sd": {
+        "unmetNeed": 0.17517066480492838,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.02049237663132317,
+        "meanDiscovery": 1.083325320483187,
+        "neverFound": 0.009879745695107744,
+        "worstStaleTop": 2.027159342528357
+      }
+    },
+    {
+      "name": "E5 ceiling (oracle acts)",
+      "mean": {
+        "unmetNeed": 0.5034068756478606,
+        "extinctPop": 0,
+        "reprSettlements": 64,
+        "reprPop": 18070.625,
+        "giniDecision": 0.065625,
+        "meanDiscovery": 4.7625,
+        "neverFound": 0.012749999999999997,
+        "worstStaleTop": 10.5
+      },
+      "sd": {
+        "unmetNeed": 0.04830395165769888,
+        "extinctPop": 0,
+        "reprSettlements": 0,
+        "reprPop": 1200.099885165814,
+        "giniDecision": 0.008184398267435425,
+        "meanDiscovery": 0.7482270711488592,
+        "neverFound": 0.008856494791959177,
+        "worstStaleTop": 3.3541019662496847
+      }
+    }
+  ]
+}
