@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — growth substrate.
+ * LLM GROWTH INTELLIGENCE — growth substrate.
  *
  * Eight fleets land on one piece of ground and grow. Each one uses a different growth logic
  * from the field guide, and the logic is REAL published mathematics, never a decorated loop:

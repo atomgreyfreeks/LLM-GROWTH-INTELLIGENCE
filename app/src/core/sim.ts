@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — deterministic simulation core.
+ * LLM GROWTH INTELLIGENCE — deterministic simulation core.
  *
  * RULE 1: no Math.random, no Date.now, no `new Date()` anywhere in simulation state.
  *         Same seed + same config => byte-identical event log, forever.

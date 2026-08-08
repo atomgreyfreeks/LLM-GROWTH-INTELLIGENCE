@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — entry.
+ * LLM GROWTH INTELLIGENCE — entry.
  *   /                 redirects to the written overview of the whole project
  *   /?scene=<code>    one interactive scene alone, with its controls
  */

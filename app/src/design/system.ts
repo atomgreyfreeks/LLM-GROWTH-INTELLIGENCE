@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — design system. Every scene imports from here. Nothing invents its own.
+ * LLM GROWTH INTELLIGENCE — design system. Every scene imports from here. Nothing invents its own.
  *
  * Direction (set by Randy, 2026-07-30): black ground, white Helvetica, CLEAN and simple.
  * High-contrast 3D. Advanced particles. Holographic controls. Smooth eased motion at 60–120fps.

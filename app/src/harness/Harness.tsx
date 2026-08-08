@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — scene shell.  /?scene=<code>
+ * LLM GROWTH INTELLIGENCE — scene shell.  /?scene=<code>
  *
  * The world is the page. Full bleed, no furniture, no sliders, no vocabulary from the method.
  * A viewer sees a place and reads sentences about it.

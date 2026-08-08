@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — the inference adapter. THE SWAP POINT.
+ * LLM GROWTH INTELLIGENCE — the inference adapter. THE SWAP POINT.
  *
  * v0 kernels are inference-free: stub agents with deterministic local policies. This file is
  * what turns any of them into a real model-backed run without touching a single scene.

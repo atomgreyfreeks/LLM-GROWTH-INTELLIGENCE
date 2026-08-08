@@ -1,4 +1,4 @@
-# AURAWORLD
+# LLM GROWTH INTELLIGENCE
 
 We build simulated disasters — a flooded survey region, a storm coast with
 conflicting witnesses, an aging bridge under sensor surveillance, a rescue

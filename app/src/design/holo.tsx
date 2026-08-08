@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — shared R3F primitives + axis store.
+ * LLM GROWTH INTELLIGENCE — shared R3F primitives + axis store.
  * Every scene composes from these so the six read as one instrument, not six demos.
  */
 import { useRef, useMemo, useLayoutEffect } from "react";

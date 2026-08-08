@@ -1,5 +1,5 @@
 /**
- * AURAWORLD — scene registry. One entry per hero sim.
+ * LLM GROWTH INTELLIGENCE — scene registry. One entry per hero sim.
  * Builders add their scene here and nowhere else. Order here is gallery order.
  */
 import type { ComponentType } from "react";
